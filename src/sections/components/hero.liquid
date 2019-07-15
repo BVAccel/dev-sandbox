@@ -1,0 +1,46 @@
+<section class="hero">
+  <img class="hero__image" src="{{ section.settings.image | img_url: 'master' }}" alt="{{ section.settings.image.alt }}" />
+  
+  <div class="hero__content">
+    <h1 class="hero__headeline">{{ section.settings.headline }}</h1>
+    <p class="hero__message">{{ section.settings.message }}</p>
+    <a class="button hero__cta" href="{{ section.settings.cta_url }}">{{ section.settings.cta_text }}</a>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Hero",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "headline",
+        "label": "Headline",
+        "default": "Lorem Ipsum<br>Dolor Sit Amet"
+      },
+      {
+        "type": "html",
+        "id": "message",
+        "label": "Message",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Phasellus laoreet nisi eget feugiat tincidunt."
+      },
+      {
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA Text",
+        "default": "Shop Now"
+      },
+      {
+        "type": "text",
+        "id": "cta_url",
+        "label": "CTA URL",
+        "default": "/"
+      }
+    ]
+  }
+{% endschema %}

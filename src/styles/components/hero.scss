@@ -1,0 +1,35 @@
+.hero {
+  position: relative;
+}
+
+.hero__image {
+  display: inline-block;
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.hero__content {
+  color: #141414;
+  left: 80px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.hero__headeline {
+  font-size: 75px;
+  line-height: 80px;
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+
+.hero__message {
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 57px;
+  margin-top: 0;
+}
+
+.hero__cta {}

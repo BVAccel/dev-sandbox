@@ -1,6 +1,7 @@
 .button {
   align-items: center;
   background-color: $color-black;
+  border: 2px solid $color-black;
   color: $color-white;
   display: inline-flex;
   font-size: 13px;
@@ -9,5 +10,21 @@
   justify-content: center;
   text-decoration: none;
   text-transform: uppercase;
+  transition-duration: 250ms;
   width: 200px;
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-black;
+  }
+}
+
+.button--secondary {
+  background-color: $color-white;
+  color: $color-black;
+
+  &:hover {
+    background-color: $color-black;
+    color: $color-white;
+  }
 }

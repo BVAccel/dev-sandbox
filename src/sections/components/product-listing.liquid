@@ -1,0 +1,54 @@
+{% assign listing_collection = collections[section.settings.collection] %}
+
+<section class="product-listing">
+  <header class="product-listing__header">
+    <div class="product-listing__headlines-wrapper">
+      <h2 class="product-listing__pre-headline">{{ listing_collection.title }}</h2>
+      <h3 class="product-listing__headline">{{ section.settings.headline }}</h3>
+    </div>
+
+    <a class="button button--secondary product-listing__link" href="{{ listing_collection.url }}">Shop {{ listing_collection.title }}</a>
+  </header>
+
+  <ul class="product-listing__list">
+    {% for block in section.blocks %}
+      {% include 'product-tile' with {
+        product: all_products[block.settings.product],
+        class_list: 'product-listing__tile'
+      }%}
+    {% endfor %}
+  </ul>
+</section>
+
+{% schema %}
+  {
+    "name": "Product Listing",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+      },
+      {
+        "type": "text",
+        "id": "headline",
+        "label": "Headline",
+        "default": "Shop Our Products"
+      }
+    ],
+    "max_blocks": 4,
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

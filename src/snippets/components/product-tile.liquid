@@ -1,0 +1,21 @@
+{% comment %}
+  Requires the following arguments:
+
+  - product: The product object that will be referenced throughout the file
+
+  Accepts the following optional arguments:
+
+  - class_list: A list of classes that will be applied to the main div
+{% endcomment %}
+
+{% assign category = product.collections | first %}
+
+<div class="product-tile {{ class_list }}">
+  <a class="product-tile__wrapper" href="{{ product.url }}">
+    <img class="product-tile__image" src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.featured_image.alt }}" />
+
+    <h5 class="product-tile__title">{{ product.title }}</h5>
+    <span class="product-tile__text">{{ category.title }}</span>
+    <span class="product-tile__text">{{ product.price | money }}</span>
+  </a>
+</div>

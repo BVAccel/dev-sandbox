@@ -1,0 +1,26 @@
+<header class="header">
+  <a href="/" class="header__image-wrapper">
+    <img class="header__image" src="{{ 'logo.png' | file_url }}" alt="Company logo" />
+  </a>
+
+  <nav class="header__navigation">
+    <ul class="header__list">
+
+      {% for link in linklists['main-menu'].links %}
+        <li class="header__list-item">
+          <a class="header__link" href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <ul class="header__list">
+      <li class="header__list-item--icon">
+        <a class="header__link" href="/search">{% include 'icon-search' %}</a>
+        
+      </li>
+      <li class="header__list-item--icon">
+        <a class="header__link" href="/cart">{% include 'icon-cart' %}</a>
+      </li>
+    </ul>
+  </nav>
+</header>

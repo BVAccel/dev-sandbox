@@ -8,16 +8,20 @@
  */
 
 html {
+  background-color: white;
   overflow-y: scroll; /* [1] */
   min-height: 100%; /* [2] */
   -webkit-overflow-scrolling: touch; /* [3] */
   min-width: 320px;
-  // background-color: $color-body-background;
 }
 
 body,
 html {
   height: 100%;
+}
+
+body {
+  margin: 0;
 }
 
 @if ($enable-box-sizing-border-box) {

@@ -34,7 +34,11 @@
 
 .header__link {
   color: $color-black;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .header__list-item--icon {

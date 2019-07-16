@@ -19,7 +19,15 @@
     <div class="product__form">
       {% form "product", product %}
         {% if product.variants.size > 1 %}
-
+          <div class="form__select-wrapper">
+            <select class="form__select" name="id">
+              {% for variant in product.variants %}
+                <option value="{{ variant.id }}">{{ variant.title }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        {% else %}
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
         {% endif %}
 
         <button type="submit" class="button button--full">Add to Cart - {{ product.price | money }}</button>

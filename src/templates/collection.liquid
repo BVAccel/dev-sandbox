@@ -1,1 +1,56 @@
 {% comment %}collection{% endcomment %}
+
+<section class="banner">
+  <img class="banner__image" src="{{ collection.image | img_url: 'master' }}" alt="{{ collection.image.alt }}" />
+  <div class="banner__content">
+    <h1 class="banner__headline">{{ collection.title }}</h1>
+  </div>
+</section>
+
+
+<section class="product-grid__container">
+  {% paginate collection.products by 8 %}
+    <div class="product-grid">
+      {% for product in collection.products %}
+        {% assign size_modulo = forloop.index | modulo: 4 %}
+        {% assign is_fourth = false %}
+        {% assign class_list = 'product-grid__product' %}
+
+        {% if size_modulo == 0 %}
+          {% assign is_fourth = true %}
+        {% endif %}
+
+        {% if is_fourth %}
+          {% assign class_list = class_list | append: ' product-grid__product--fourth' %}
+        {% endif %}
+
+        {% include 'product-tile' with {
+          product: product,
+          class_list: class_list
+        } %}
+      {% endfor %}
+    </div>
+
+    <div class="product-grid__pagination">
+      {% if paginate.prev.is_link %}
+        <span class="product-grid__pagination__part">
+          {{ '<' | link_to: paginate.prev.url }}
+        </span>
+      {% endif %}
+      {% for part in paginate.parts %}
+        {% if part.is_link %}
+          <span class="product-grid__pagination__part">
+            {{ part.title | link_to: part.url }}
+          </span>
+        {% else %}
+          <span class="product-grid__pagination__part">{{ part.title }}</span>
+        {% endif %}
+      {% endfor %}
+      {% if paginate.next.is_link %}
+        <span class="product-grid__pagination__part">
+          {{ '>' | link_to: paginate.next.url }}
+        </span>
+      {% endif %}
+    </div>
+  {% endpaginate %}
+</section>

@@ -12,9 +12,13 @@
 // Shame
 // @import 'base/shame';
 
+// Globals
+@import 'globals/button';
+
 // Components
-@import 'components/button';
+@import 'components/banner';
 @import 'components/header';
 @import 'components/hero';
+@import 'components/product-grid';
 @import 'components/product-listing';
 @import 'components/product-tile';

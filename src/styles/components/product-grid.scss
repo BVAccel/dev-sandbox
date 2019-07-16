@@ -1,0 +1,40 @@
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 160px 80px 80px;
+}
+
+.product-grid__product {
+  margin-bottom: 40px;
+  margin-right: 20px;
+  width: calc(25% - 15px);
+}
+
+.product-grid__product--fourth {
+  margin-right: 0;
+}
+
+.product-grid__pagination {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 156px;
+}
+
+.product-grid__pagination__part {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 15px;
+  margin-right: 15px;
+
+  a {
+    color: black;
+    color: black;
+    opacity: 0.5;
+    text-decoration: none;
+    transition-duration: 250ms;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

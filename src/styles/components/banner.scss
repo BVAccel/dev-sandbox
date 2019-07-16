@@ -1,0 +1,23 @@
+.banner {
+  position: relative;
+  width: 100%;
+}
+
+.banner__image {
+  max-width: 100%;
+}
+
+.banner__content {
+  left: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.banner__headline {
+  font-size: 55px;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin: 0;
+}
+

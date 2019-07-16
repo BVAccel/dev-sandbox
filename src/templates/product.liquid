@@ -1,1 +1,29 @@
 {% comment %}product{% endcomment %}
+
+{% assign category = product.collections | first %}
+
+<section class="product">
+  <div class="product__image-wrapper">
+    <img class="product__image" src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.featured_image.alt }}" />
+  </div>
+
+  <div class="product__meta">
+    <h2 class="product__pre-headline">{{ category.title }}</h2>
+    <div class="product__details">
+      <h1 class="product__headline">{{ product.title }}</h1>
+      <span class="product__price">{{ product.price | money }}</span>
+    </div>
+
+    <p class="product__description">{{ product.description }}</p>
+
+    <div class="product__form">
+      {% form "product", product %}
+        {% if product.variants.size > 1 %}
+
+        {% endif %}
+
+        <button type="submit" class="button button--full">Add to Cart - {{ product.price | money }}</button>
+      {% endform %}
+    </div>
+  </div>
+</section>

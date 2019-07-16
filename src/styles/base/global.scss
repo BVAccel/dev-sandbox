@@ -7,6 +7,12 @@
  * 3. https://css-tricks.com/snippets/css/momentum-scrolling-on-ios-overflow-elements/
  */
 
+*,
+*::before,
+*::after {
+  -webkit-font-smooting: antialiased;
+}
+
 html {
   background-color: white;
   font-family: Helvetica, sans-serif;

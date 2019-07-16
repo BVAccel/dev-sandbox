@@ -1,1 +1,5 @@
 {% comment %}cart{% endcomment %}
+
+{% for line_item in cart.line_items %}
+  {{ line_item.title }}
+{% endfor %}

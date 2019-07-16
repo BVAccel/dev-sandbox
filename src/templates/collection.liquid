@@ -32,9 +32,9 @@
     </div>
 
     <div class="product-grid__pagination">
-      {% if paginate.prev.is_link %}
+      {% if paginate.previous.is_link %}
         <span class="product-grid__pagination__part">
-          {{ '<' | link_to: paginate.prev.url }}
+          {{ '<' | link_to: paginate.previous.url }}
         </span>
       {% endif %}
       {% for part in paginate.parts %}

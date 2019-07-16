@@ -8,28 +8,30 @@
       <strong class="cart__items__headline">Quantity</strong>
     </div>
 
-    <form class="cart__items" action="/cart" method="post">
-      {% for line_item in cart.items %}
-        {% assign category = line_item.product.collections | first %}
-        <div class="cart__item">
-          <div class="cart__column cart__image-column">
-            <img class="cart__item__image" src="{{ line_item.image | img_url: 'master' }}" alt="{{ line_item.image.alt }}" />
-          </div>
-          <div class="cart__column cart__product-column">
-            <div class="cart__item-details">
-              <h2 class="cart__product-title">{{ line_item.product.title }}</h2>
-              <h3 class="cart__product-category">{{ category.title }}</h3>
-              <span class="cart__product-price">{{ line_item.price | money }}</span>
+    <form class="cart__items--form" action="/cart" method="post">
+      <div class="cart__items">
+        {% for line_item in cart.items %}
+          {% assign category = line_item.product.collections | first %}
+          <div class="cart__item">
+            <div class="cart__column cart__image-column">
+              <img class="cart__item__image" src="{{ line_item.image | img_url: 'master' }}" alt="{{ line_item.image.alt }}" />
+            </div>
+            <div class="cart__column cart__product-column">
+              <div class="cart__item-details">
+                <h2 class="cart__product-title">{{ line_item.product.title }}</h2>
+                <h3 class="cart__product-category">{{ category.title }}</h3>
+                <span class="cart__product-price">{{ line_item.price | money }}</span>
+              </div>
+            </div>
+            <div class="cart__column cart__quantity-column">
+              <input class="cart__quantity" name="updates[]" size="2" type="number" value="{{ line_item.quantity }}" />
+            </div>
+            <div class="cart__column cart__remove-column">
+              <a class="cart__remove" href="/cart/change?line={{ forloop.index }}&quantity=0">Remove</a>
             </div>
           </div>
-          <div class="cart__column cart__quantity-column">
-            <input class="cart__quantity" name="updates[]" size="2" type="number" value="{{ line_item.quantity }}" />
-          </div>
-          <div class="cart__column cart__remove-column">
-            <a class="cart__remove" href="/cart/change?line={{ forloop.index }}&quantity=0">Remove</a>
-          </div>
-        </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
 
       <input class="button" type="submit" name="checkout" value="Checkout" />
     </form>

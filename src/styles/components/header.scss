@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  margin: 0 auto;
+  padding: 25px 0;
+  align-items: center;
+  max-width: 1440px;
+}
+
+.header__image {
+  width: 90px;
+}
+
+.header__cell {
+  width: calc(100% - 90px);
+  text-align: right;
+}

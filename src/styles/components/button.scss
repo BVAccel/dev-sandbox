@@ -1,0 +1,25 @@
+$button-color:  $color-white;
+
+$button-alt-color:        $primary-color;
+$button-alt-bg-color:     $color-white;
+$button-alt-border-color: $primary-color;
+
+.button {
+  display: inline-block;
+  padding: 24px 48px;
+  color: $button-color;
+  font-size: 13px;
+  text-transform: uppercase;
+  background: $primary-color;
+  border: 0;
+}
+
+.button--alt {
+  color: $button-alt-color;
+  background: $button-alt-bg-color;
+  border: 1px solid $button-alt-border-color;
+}
+
+.button--full-width {
+  width: 100%;
+}

@@ -1,0 +1,14 @@
+{% assign parent_collection = product.collections | first %}
+
+<div class="product-tile">
+  <a href="{{ product.url }}" class="product-tile__image-link">
+    <img 
+      src="{{ product | img_url: '290x', scale: 2 }}"
+      srcset="{{ product | img_url: '290x', scale: 2 }} 2x, {{ product | img_url: '290x' }}"
+      class="product-tile__image"
+    />
+  </a>
+  <a href="{{ product.url }}" class="product-tile__name">{{ product.title }}</a>
+  <p class="product-tile__category">{{ parent_collection.title }}</p>
+  <p class="product-tile__price">{{ product.price | money_without_trailing_zeros }}
+</div>

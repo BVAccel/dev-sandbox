@@ -1,0 +1,25 @@
+.cart {
+  margin: 0 auto;
+  padding: 0 0 160px;
+  max-width: 1040px;
+}
+
+.cart__heading {
+  margin: 120px 0;
+  font-size: 55px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cart__update-quantity {
+  display: none;
+
+  .no-js & {
+    display: block;
+  }
+}
+
+.cart__checkout {
+  margin: 80px 0 0;
+  text-align: center;
+}

@@ -1,0 +1,62 @@
+<section class="hero">
+  {% assign img = section.settings.image %}
+  <picture class="hero__image">
+    <source
+      srcset="{{ img | img_url: '768', scale: 2 }} 2x,
+              {{ img | img_url: '768'}}"
+    >
+    <source
+      srcset="{{ img | img_url: '1900x', scale: 2 }} 2x,
+              {{ img | img_url: '1900x'}}"
+      media="(min-width: 768px)"
+    >
+    <img 
+      src="{{ img | img_url: 'master' }}"
+      srcset="{{ img | img_url: '1900x', scale: 2 }} 2x, {{ img | img_url: '1900x' }}"
+      alt="{{ img.alt }}"
+      class="hero__image"
+    />
+  </picture>
+  
+  <div class="hero__content">
+    <h1 class="hero__heading">{{ section.settings.heading }}</h1>
+    <div class="hero__copy">{{ section.settings.copy }}</div>
+    <a href="{{ section.settings.url }}" class="hero__cta button">{{ section.settings.cta }}</a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "LOREM IPSUM DOLOR SIT AMET"
+    },
+    {
+      "type": "richtext",
+      "id": "copy",
+      "label": "Copy",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus laoreet nisi eget feugiat tincidunt.</p>"
+    },
+    {
+      "type": "text",
+      "id": "cta",
+      "label": "Button Text",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Link URL"
+    }
+  ]
+}
+{% endschema %}

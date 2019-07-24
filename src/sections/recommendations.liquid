@@ -1,0 +1,43 @@
+{% assign current_collection = collections[section.settings.collection] %}
+
+<section class="recommendations">
+  <h1 class="recommendations__heading">{{ current_collection.title }}</h1>
+  <h2 class="recommendations__sub-heading">Shop our products</h2>
+  <a href="{{ current_collection.url }}" class="recommendations__cta button button--alt">Shop {{ current_collection.title }}</a>
+
+  <div class="recommendations__products">
+    {% for block in section.blocks  %}
+      {% assign current_product = all_products[block.settings.product] %}
+      <div class="recommendations__product">
+        {% include 'product-tile', product: current_product %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Recommendations",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_tile",
+      "name": "Product Tile",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4
+}
+{% endschema %}

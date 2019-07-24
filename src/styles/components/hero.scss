@@ -1,0 +1,33 @@
+$hero-content-offset: 80px;
+
+.hero {
+  position: relative;
+}
+
+.hero__image {
+  display: block;
+
+  img {
+    width: 100%;
+  }
+}
+
+.hero__content {
+  position: absolute;
+  top: 50%;
+  left: $hero-content-offset;
+  width: calc(50% - #{$hero-content-offset});
+  transform: translateY(-50%);
+}
+
+.hero__heading {
+  font-size: 70px;
+  text-transform: uppercase;
+}
+
+.hero__copy {
+  margin: 0 0 40px;
+  font-size: 20px;
+}
+
+.hero__cta {}

@@ -1,0 +1,23 @@
+.product-tile {
+  margin: 0 auto;
+  max-width: 290px;
+}
+
+.product-tile__image-link {
+  display: inline-block;
+  margin: 0 0 25px;
+}
+
+.product-tile__image {
+  display: inline-block;
+}
+
+.product-tile__name {
+  color: $primary-color;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.product-tile__category {
+  text-transform: uppercase;
+}

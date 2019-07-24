@@ -1,0 +1,16 @@
+.utility-nav {
+  display: inline-block;
+  margin: 0 0 0 50px;
+  padding: 0;
+  list-style: none;
+  vertical-align: middle;
+}
+
+.utility-nav__item {
+  display: inline-block;
+  vertical-align: middle;
+
+  & + & {
+    margin-left: 50px;
+  }
+}

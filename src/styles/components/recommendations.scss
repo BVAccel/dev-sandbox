@@ -1,0 +1,34 @@
+$recommendations-vertical-spacing: 130px;
+
+.recommendations {
+  position: relative;
+  margin: 0 auto;
+  padding: $recommendations-vertical-spacing 0;
+  max-width: 1440px;
+}
+
+.recommendations__heading {
+  margin: 0 0 20px;
+  font-size: 18px;
+}
+
+.recommendations__sub-heading {
+  margin: 0 0 40px;
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+.recommendations__cta {
+  position: absolute;
+  top: $recommendations-vertical-spacing;
+  right: 0;
+}
+
+.recommendations__products {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recommendations__product {
+  width: 25%;
+}

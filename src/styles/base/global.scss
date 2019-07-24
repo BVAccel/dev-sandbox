@@ -13,6 +13,8 @@ html {
   -webkit-overflow-scrolling: touch; /* [3] */
   min-width: 320px;
   // background-color: $color-body-background;
+  color: $primary-color;
+  font-family: 'Helvetica';
 }
 
 body,

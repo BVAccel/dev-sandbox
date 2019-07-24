@@ -1,1 +1,25 @@
-{% comment %}collection{% endcomment %}
+<div class="collection {% if collection.image %}collection--contains-image{% endif %}">
+  <div class="collection__header">
+    {% if collection.image %}
+      <img
+        src="{{ collection.image | img_url: 'master' }}"
+        alt="{{ collection.image.alt }}"
+        class="collection__image"
+      />
+    {% endif %}
+    <h1 class="collection__title">{{ collection.title }}</h1>
+  </div>
+
+  {% paginate collection.products by 8 %}
+    <div class="collection__products">
+      {% for product in collection.products %}
+        <div class="collection__product">
+          {% include 'product-tile', current_product: product %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="collection__pagination">
+      {{ paginate | default_pagination }}
+    </div>
+  {% endpaginate %}
+</div>

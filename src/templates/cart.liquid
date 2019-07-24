@@ -1,1 +1,40 @@
-{% comment %}cart{% endcomment %}
+<div class="cart">
+  <h1 class="cart__heading">Your Cart</h1>
+  <div class="cart__items">
+    <form action="/cart" method="post">
+      {% for item in cart.items %}
+        {% assign parent_collection = item.product.collections | first %}
+
+        <div class="cart-item">
+          <div class="cart-item__cell cart-item__cell--image">
+            <img
+              src="{{ item | img_url: '180x', scale: 2 }}"
+              srcset="{{ item | img_url: '180x', scale: 2 }} 2x, {{ item | img_url: '180x' }}"
+              alt="{{ item.image.alt }}"
+              class="cart-item__image"
+            />
+          </div>
+          <div class="cart-item__cell cart-item__cell--info">
+            <p class="cart-item__cell-title">Product</p>
+            <p class="cart-item__title">{{ item.title }}</p>
+            <p class="cart-item__category">{{ parent_collection.title }}</p>
+            <p class="cart-item__price">{{ item.price | money_without_trailing_zeros }}
+          </div>
+          <div class="cart-item__cell cart-item__cell--quantity">
+            <p class="cart-item__cell-title">Quantity</p>
+            <input type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" class="cart-item__quantity" data-quantity-input />
+          </div>
+          <div class="cart-item__cell cart-item__cell--actions">
+            <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="cart-item__remove">Remove</a>
+          </div>
+        </div>
+      {% endfor %}
+      <p class="cart__update-quantity">
+        <button type="submit" value="Update quantities" class="button" data-quantity-submit>Update quantities</button>
+      </p>
+      <p class="cart__checkout">
+        <button type="submit" name="checkout" value="Checkout" class="button">Checkout</button>
+      </p>
+    </form>
+  </div>
+</div>

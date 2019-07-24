@@ -1,0 +1,26 @@
+.nav {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__item {
+  display: inline-block;
+  vertical-align: middle;
+
+  & + & {
+    margin-left: 50px;
+  }
+}
+
+.nav__link {
+  color: $primary-color;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+}

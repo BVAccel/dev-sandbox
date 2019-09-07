@@ -6,5 +6,29 @@
     "theme_author": "BVAccel",
     "theme_documentation_url": "https://github.com/bvaccel/blank-slate",
     "theme_support_url": "https://github.com/bvaccel/blank-slate/issues"
+  },
+  {
+    "name": "Promobar",
+    "settings": [
+      {
+        "type": "text",
+        "id": "promobar_text",
+        "label": "Text",
+        "default": "20% OFF on everything",
+        "placeholder": "3 0% OFF on everything"
+      },
+      {
+        "type": "color",
+        "id": "promobar_color",
+        "label": "Color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "promobar_background_color",
+        "label": "Background color",
+        "default": "#222"
+      }
+    ]
   }
 ]

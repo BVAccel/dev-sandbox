@@ -1,0 +1,59 @@
+// 1. Core
+// 2. Item 
+// 3. Link 
+// 4. Container
+// 5. Mobile
+// 6. Desktop
+// 7. Right
+
+.header-nav-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-direction: column;
+
+  @include mq('large') {
+    flex-direction: row;
+  }
+}
+
+// .header-nav-list__item {}
+
+.header-nav-list__link {
+  display: flex;
+  padding: 20px;
+
+  &:hover {
+    background-color: #eee;
+  }
+}
+
+.header-nav-list__container {
+  display: flex;
+  flex-direction: column;
+
+  @include mq('large') {
+    flex-direction: row;
+  }
+}
+
+.header-nav-list--mobile {
+  display: flex;
+
+  @include mq('large') {
+    display: none;
+  }
+}
+
+.header-nav-list--desktop {
+  display: none;
+
+  @include mq('large') {
+    display: flex;
+  }
+}
+
+.header-nav-list--right {
+  margin-left: auto;
+}

@@ -1,0 +1,14 @@
+<ul class="header-nav-list {{ class }}">
+  {% for link in linklists[nav].links %}
+
+    <li class="header-nav-list__item">
+      <a
+        href="{{ link.url }}"
+        class="header-nav-list__link"
+      >
+        {{ link.title }}
+      </a>
+    </li>
+
+  {% endfor %}
+</ul>

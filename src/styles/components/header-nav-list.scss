@@ -18,14 +18,34 @@
   }
 }
 
-// .header-nav-list__item {}
+.header-nav-list__logo {
+  display: none;
+
+  @include mq('large') {
+    display: flex;
+  }
+}
+
+.header-nav-list__item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  @include mq('large') {
+    width: auto;
+  }
+}
 
 .header-nav-list__link {
+  width: 100%;
   display: flex;
   padding: 20px;
+  color: $color-grey-darker;
+  justify-content: center;
 
   &:hover {
-    background-color: #eee;
+    color: #fff;
+    background-color: $color-grey-dark;
   }
 }
 
@@ -40,6 +60,7 @@
 
 .header-nav-list--mobile {
   display: flex;
+  align-items: center;
 
   @include mq('large') {
     display: none;

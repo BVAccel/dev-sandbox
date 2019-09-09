@@ -1,4 +1,5 @@
 import { focusHash, bindInPageLinks } from '@shopify/theme-a11y';
+import { init as initHeader } from "../components/Header";
 
 import 'styles/theme.scss';
 import 'styles/theme.scss.liquid';
@@ -7,7 +8,9 @@ import 'styles/theme.scss.liquid';
 focusHash();
 bindInPageLinks();
 
-document.addEventListener('DOMContentLoaded', () => {});
+document.addEventListener('DOMContentLoaded', () => {
+  initHeader();
+});
 
 window.addEventListener('load', () => {});
 

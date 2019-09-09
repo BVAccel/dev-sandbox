@@ -17,6 +17,12 @@
   $(dom.inlineCartContents).html(getCartContents());
 
 */
-const dom = {};
+const dom = {
+  header: '[data-header]',
+  headerHamburger: '[data-header-hamburger]',
+  headerNav: '[data-header-nav]',
+  headerNav: '[data-header-navbar]',
+  headerNavListContainer: '[data-header-nav-list-container]',
+};
 
 export default dom;

@@ -1,0 +1,22 @@
+.header-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.header-search__input {
+  padding: 5px;
+  margin: 0 auto;
+  width: 100%;
+  font-size: 16px;
+  text-align: center;
+  line-height: 48px;
+  border: 1px solid  $color-grey;
+
+  @include mq('large') {
+    margin: 0 5px;
+    width: auto;
+    text-align: left;
+  }
+}

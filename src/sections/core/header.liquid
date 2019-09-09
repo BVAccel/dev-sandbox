@@ -3,23 +3,6 @@
   data-header
 >
   {% include 'promobar' %}
-
-  <nav class="header-navbar">
-    {% include 'header-hamburger' %}
-    {% include 'header-logo' %}
-    {% include 'header-cart-button' %}
-  </nav>
-
-  <nav
-    class="header-nav-list__container"
-    data-header-nav
-  >
-    <div class="header-nav-list__logo">
-      {% include 'header-logo' %}
-    </div>
-
-    {% include 'header-nav' %}
-    {% include 'header-search' %}
-    {% include 'header-cart-button' %}
-  </nav>
+  {% include 'header-navbar' %}
+  {% include 'header-nav-list-container' %}
 </section>

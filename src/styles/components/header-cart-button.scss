@@ -3,6 +3,7 @@
   padding: 15px;
   color: $color-grey-darker;
   justify-content: center;
+  transition: background $transtion;
 
   &:hover {
     background-color: $color-grey-dark;
@@ -16,5 +17,6 @@
     fill: $color-grey-darker;
     width: 30px;
     height: 30px;
+    transition: fill $transtion;
   }
 }

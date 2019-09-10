@@ -42,6 +42,7 @@
   padding: 20px;
   color: $color-grey-darker;
   justify-content: center;
+  transition: color $transtion, background $transtion;
 
   &:hover {
     color: #fff;
@@ -55,8 +56,7 @@
   overflow: hidden;
   max-height: 0;
   opacity: 0.01;
-  transition: max-height 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-              opacity 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: max-height $transtion, opacity $transtion;
 
   @include mq('large') {
     flex-direction: row;

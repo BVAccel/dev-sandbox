@@ -30,6 +30,10 @@ $color-grey-lighter: #eee;
 
 $color-body-text: #222;
 
+$transition-duration: 250ms;
+$transition-func: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$transtion: $transition-duration $transition-func;
+
 // $named-widths: (
 //   1: full,
 //   0.5: half,

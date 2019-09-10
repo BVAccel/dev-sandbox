@@ -4,7 +4,6 @@
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
-  transition: height 500ms ease-in-out;
 
   @include mq('large') {
     display: none;

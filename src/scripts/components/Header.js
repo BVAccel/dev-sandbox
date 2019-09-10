@@ -7,6 +7,5 @@ const bindActions = () => {
 }
 
 export const init = () => {
-  console.log('init')
   bindActions();
 }

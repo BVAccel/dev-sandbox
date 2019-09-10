@@ -23,7 +23,7 @@ const dom = {
   headerNav: '[data-header-nav]',
   headerNav: '[data-header-navbar]',
   headerNavListContainer: '[data-header-nav-list-container]',
-  heroSlider: '[data-hero-slider]',
+  heroSlider: '[data-slider]',
 };
 
 export default dom;

@@ -1,15 +1,15 @@
 <div
   id="section-{{ section.id }}"
-  class="hero-slider"
-  data-hero-slider
+  class="slider"
+  data-slider
 >
   {% for block in section.blocks %}
     <div>
       <div
-        class="hero-slider__slide"
+        class="slider__slide"
         style="background-image:url('{{ block.settings.image | img_url: 'master' }}');"
       >
-        <h2 class="hero-slider__slide-title">
+        <h2 class="slider__slide-title">
           {{ block.settings.title }}
         </h2>
       </div>

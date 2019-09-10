@@ -1,0 +1,55 @@
+<sections class="collections">
+  <h2 class="collections__title">
+    {{ section.settings.heading }}
+  </h2>
+
+  <div class="collections__container">
+    {% for block in section.blocks %}
+      <a
+        href="{{ collections[block.settings.collection].url }}"
+        class="collections__collection-link"
+      >
+        <div
+          class="collections__collection"
+          style="background-image: url('{{ collections[block.settings.collection].image | img_url: 'master'}}');"
+        >
+          <h2 class="collections__collection-title">
+            {{ block.settings.title }}
+          </h2>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</sections>
+
+{% schema %}
+{
+  "name": "Homepage collections",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Add collection",
+      "settings": [
+        {
+          "id": "title",
+          "label": "Collection title",
+          "type": "text"
+        },
+        {
+          "id": "collection",
+          "type": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

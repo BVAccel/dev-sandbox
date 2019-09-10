@@ -1,0 +1,91 @@
+.hero-slider__slide{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  background-size: cover;
+
+  @include mq('large') {
+    min-height: 600px;
+  }
+}
+
+.hero-slider__slide-title {
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+//
+// Slick slider rewrites
+//
+.slick-next {
+  right: 10px;
+
+  &:before {
+    content: "\f054";
+  }
+}
+
+.slick-prev {
+  left: 10px;
+  
+  &:before {
+    content: "\f053";
+  }
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+
+  &:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 40px;
+  }
+
+  @include mq('large') {
+    .slick-prev,
+    .slick-next {
+      width: 60px;
+      height: 60px;
+
+      &:before {
+        font-size: 60px;
+      }
+    }
+  }
+}
+
+.slider-gutter {
+  .slick-slide {
+    margin: 0 10px;
+  }
+}
+
+.slick-dots {
+  bottom: 15px;
+  margin-left: 0; // Fixes the visible horizontal scroll bar
+
+  @include mq('large') {
+    bottom: initial;
+    top: 0;
+    right: 10px;
+    width: auto;
+  }
+}
+
+.slick-dots li {
+  margin: 0;
+}
+
+.slick-dots li,
+.slick-dots li button,
+.slick-dots li button:before {
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+  padding: 0;
+}

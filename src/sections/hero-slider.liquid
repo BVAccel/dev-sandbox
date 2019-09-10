@@ -1,0 +1,44 @@
+<div
+  id="section-{{ section.id }}"
+  class="hero-slider"
+  data-hero-slider
+>
+  {% for block in section.blocks %}
+    <div>
+      <div
+        class="hero-slider__slide"
+        style="background-image:url('{{ block.settings.image | img_url: 'master' }}');"
+      >
+        <h2 class="hero-slider__slide-title">
+          {{ block.settings.title }}
+        </h2>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Homepage slider",
+    "max_blocks": 5,
+    "settings": [],
+    "blocks": [
+      {
+        "type": "select",
+        "name": "Add new slide",
+        "settings": [
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Title"
+          },
+          {
+            "id": "image",
+            "type": "image_picker",
+            "label": "Image"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

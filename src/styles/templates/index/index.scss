@@ -1,2 +1,9 @@
 // Helpers
 @import '../../helpers/index';
+
+// Vendor
+@import "../../vendor/slick/slick.scss";
+@import "../../vendor/slick/slick-theme.scss";
+
+// Sections
+@import '../../sections/hero-slider';

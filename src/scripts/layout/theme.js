@@ -1,5 +1,6 @@
 import { focusHash, bindInPageLinks } from '@shopify/theme-a11y';
 import { init as initHeader } from "../components/Header";
+import { init as initHeroSlider } from "../components/HeroSlider";
 
 import 'styles/theme.scss';
 import 'styles/theme.scss.liquid';
@@ -10,6 +11,7 @@ bindInPageLinks();
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
+  initHeroSlider();
 });
 
 window.addEventListener('load', () => {});

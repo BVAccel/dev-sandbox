@@ -1,0 +1,45 @@
+<section class="instagram">
+  <h2 class="instagram__title">
+    {{ section.settings.heading }}
+  </h2>
+  <div class="instagram__container">
+    {% for block in section.blocks.settings %}
+      <img
+        src="{{ block.image }}"
+        alt="{{ block.text }}"
+        class="instagram__img"
+      />
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Homepage instagram",
+  "settings": [
+    {
+      "id": "heading",
+      "label": "Heading",
+      "type": "text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "select",
+      "name": "Add image",
+      "settings": [
+        {
+          "id": "image",
+          "label": "Image",
+          "type": "image_picker"
+        },
+        {
+          "id": "text",
+          "label": "Image alt tag",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

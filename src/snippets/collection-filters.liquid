@@ -1,0 +1,14 @@
+<div class="collection-filters">
+  <h3 class="collection-filters__title">
+    Collection Filters
+  </h3>
+
+  {% assign filter = 'Color' %}
+  {% include 'collection-filter' %}
+
+  {% assign filter = 'Size' %}
+  {% include 'collection-filter' %}
+
+  {% assign filter = 'Brand' %}
+  {% include 'collection-filter' %}
+</div>

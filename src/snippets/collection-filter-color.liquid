@@ -1,21 +1,20 @@
 <div class="collection-filter">
   <h4 class="collection-filter__title">
-    {{ filter }}
+    Color
   </h4>
 
-  {% assign label = filter | downcase %}
-  {% assign string = 'filter-' | append: label %}
-  {% assign string = string | append: '-' %}
-  {% assign length = string.size %}
-
-  <ul class="collection-filter__list">
+  <ul class="collection-filter__list collection-filter__list--color">
     {% for tag in collection.all_tags %}
-      {% if tag contains string %}
+      {% if tag contains 'filter-color-' %}
         {% assign tag_length = tag.size %}
 
         <li class="collection-filter__item">
           <a href="/collections/{{ collection.handle }}/{{ tag }}">
-            {{ tag | slice: length, tag_length }}
+            <div
+              class="collection-filter__swatch"
+              style="background-color: {{ tag | slice: 13, tag_length }}"
+            >
+            </div>
           </a>
         </li>
       {% endif %}

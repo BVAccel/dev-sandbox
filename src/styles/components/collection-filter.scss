@@ -5,3 +5,20 @@
 .collection-filter__title {
   font-size: 16px;
 }
+
+.collection-filter__swatch-container {
+  display: flex;
+}
+
+.collection-filter__swatch {
+  width: 40px;
+  height: 40px;
+}
+
+.collection-filter__list {}
+
+.collection-filter__item {}
+
+.collection-filter__list--color {
+  display: flex;
+}

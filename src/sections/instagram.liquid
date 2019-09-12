@@ -2,11 +2,14 @@
   <h2 class="instagram__title">
     {{ section.settings.heading }}
   </h2>
-  <div class="instagram__container">
-    {% for block in section.blocks.settings %}
+  <div
+    class="instagram__container"
+    data-instagram
+  >
+    {% for block in section.blocks %}
       <img
-        src="{{ block.image }}"
-        alt="{{ block.text }}"
+        src="{{ block.settings.image | img_url: 'master' }}"
+        alt="{{ block.settings.text }}"
         class="instagram__img"
       />
     {% endfor %}
@@ -39,6 +42,12 @@
           "type": "text"
         }
       ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Sliders",
+      "name": "Instagram"
     }
   ]
 }

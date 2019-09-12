@@ -1,5 +1,26 @@
+.products {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin-bottom: $space-lg;
+
+  @include mq('large') {
+    padding: 0;
+    margin-bottom: $space-xl;
+  }
+}
+
 .products__title {
+  margin: 0 0 $space-xs;
   text-align: center;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 36px;
+
+  @include mq('large') {
+    font-size: 38px;
+    line-height: 46px;
+  }
 }
 
 .products__container {
@@ -37,14 +58,14 @@
   padding-bottom: 100%;
   background: center no-repeat;
   background-size: contain;
-  transition: opacity $transtion;
+  transition: opacity $transition;
 }
 
 .products__product-title {
-  transition: color $transtion;
+  transition: color $transition;
 }
 
 .products__product-price {
   color: $color-grey;
-  transition: color $transtion;
+  transition: color $transition;
 }

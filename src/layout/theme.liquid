@@ -52,6 +52,7 @@
   </head>
 
   <body
+    class="container"
     data-template="{{ template.name | handle }}"
     {%- if template.suffix != blank -%}
       data-alternate-template="{{ template.suffix | handle }}"
@@ -64,7 +65,7 @@
       Skip to content
     </a>
 
-    {% section 'header' %}
+    {% include 'header' %}
 
     <main
       role="main"
@@ -74,9 +75,7 @@
       {{ content_for_layout }}
     </main>
 
-    {%- comment -%}
-      {% section 'footer' %}
-    {%- endcomment -%}
+    {% include 'footer' %}
 
     {% include 'external-scripts' %}
   </body>

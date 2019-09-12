@@ -6,7 +6,6 @@
 @import "../../vendor/slick/slick-theme.scss";
 
 // Sections
-@import '../../sections/slider';
-@import '../../sections/collections';
-@import '../../sections/products';
-@import '../../sections/instagram';
+@import '../../components/slider';
+@import '../../components/collections';
+@import '../../components/products';

@@ -5,12 +5,12 @@
 }
 
 .header-search__input {
-  padding: 5px;
-  margin: 0 auto;
   width: 100%;
+  margin: 0 auto;
+  padding: 5px;
   font-size: 16px;
   text-align: center;
-  line-height: 48px;
+  line-height: 28px;
   border: 1px solid  $color-grey;
 
   @include mq('large') {

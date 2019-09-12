@@ -1,3 +1,11 @@
+.slider {
+  margin-bottom: $space-lg;
+
+  @include mq('large') {
+    margin-bottom: $space-xl;
+  }
+}
+
 .slider__slide{
   display: flex;
   align-items: center;
@@ -57,11 +65,12 @@
   }
 }
 
-.slider-gutter {
-  .slick-slide {
-    margin: 0 10px;
-  }
-}
+// Default gutters
+// .slider-gutter {
+//   .slick-slide {
+//     margin: 0 10px;
+//   }
+// }
 
 .slick-dots {
   bottom: 15px;

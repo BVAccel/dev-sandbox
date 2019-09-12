@@ -1,3 +1,28 @@
+.collections {
+  display: flex;
+  flex-direction: column;
+  padding: $space-xs;
+  margin-bottom: $space-lg;
+
+  @include mq('large') {
+    padding: 0;
+    margin-bottom: $space-xl;
+  }
+}
+
+.collections__title {
+  margin: 0 0 $space-xs;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 36px;
+
+  @include mq('large') {
+    font-size: 38px;
+    line-height: 46px;
+  }
+}
+
 .collections__container {
   display: flex;
   flex-wrap: wrap;
@@ -19,10 +44,6 @@
   }
 }
 
-.collections__title {
-  text-align: center;
-} 
-
 .collections__collection {
   display: flex;
   align-items: center;
@@ -31,7 +52,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  transition: opacity $transtion, background $transtion;
+  transition: opacity $transition, background $transition;
 }
 
 .collections__collection-title {

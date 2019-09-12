@@ -30,5 +30,34 @@
         "default": "#222"
       }
     ]
+  },
+  {
+    "name": "Social Links",
+    "settings": [
+      {
+        "type": "text",
+        "id": "facebook_url",
+        "label": "Facebook URL",
+        "default": "https://facebook.com"
+      },
+      {
+        "type": "text",
+        "id": "instagram_url",
+        "label": "Instagram URL",
+        "default": "https://instagram.com"
+      },
+      {
+        "type": "text",
+        "id": "pinterest_url",
+        "label": "Pinterest URL",
+        "default": "https://pinterest.com"
+      },
+      {
+        "type": "text",
+        "id": "twitter_url",
+        "label": "Twitter URL",
+        "default": "https://twitter.com"
+      }
+    ]
   }
 ]

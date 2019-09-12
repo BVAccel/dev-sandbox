@@ -5,13 +5,9 @@ const config = {
   arrows: true,
   dots: true,
   autoplay: true,
-  autoplaySpeed: 8000
+  autoplaySpeed: 5000
 }
 
-const bindActions = () => {
-  $(dom.heroSlider).slick(config);
-}
+const bindActions = () => $(dom.slider).slick(config);
 
-export const init = () => {
-  bindActions();
-}
+export const init = () => bindActions();

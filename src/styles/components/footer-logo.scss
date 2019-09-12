@@ -1,0 +1,18 @@
+.footer-logo {
+  width: 200px;
+  display: none;
+  justify-content: center;
+  color: $color-grey-darker;
+  font-size: 26px;
+  line-height: 31px;
+  margin: 0 auto $space-xs;
+  transition: opacity $transition;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  @include mq('large') {
+    display: flex;
+  }
+}

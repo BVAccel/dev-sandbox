@@ -1,4 +1,53 @@
-.footer-form {}
-.footer-form__title {}
-.footer-form__form {}
-.footer-form__input {}
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mq('large') {
+    flex: 2;
+    flex-direction: row;
+  }
+}
+
+.footer-form__title {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 300;
+  text-align: center;
+  margin: 0 0 15px;
+
+  @include mq('large') {
+    flex: 1;
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+.footer-form__form {
+  width: 100%;
+  padding: 0 $space-xs;
+  margin: 0 0 $space-sm;
+
+  @include mq('large') {
+    flex: 1;
+  }
+}
+
+.footer-form__input {
+  width: 100%;
+  height: 40px;
+  background-color: $color-grey-lighter;
+  border: none;
+  border-radius: 2px;
+  padding: $space-2xs;
+  text-align: center;
+
+  &::placeholder {
+    color: $color-grey-darker;
+    font-size: 14px;
+  }
+
+  @include mq('large') {
+    text-align: left;
+  }
+}

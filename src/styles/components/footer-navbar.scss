@@ -1,0 +1,9 @@
+.footer-navbar {
+  display: flex;
+  flex-direction: column;
+
+  @include mq('large') {
+    flex-direction: row;
+    margin-bottom: $space-lg;
+  }
+}

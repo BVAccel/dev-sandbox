@@ -1,0 +1,11 @@
+.header-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+
+  @include mq('large') {
+    display: none;
+  }
+}

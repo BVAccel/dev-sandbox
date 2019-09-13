@@ -1,0 +1,16 @@
+.header-logo {
+  font-size: 16px;
+  font-weight: 700;
+  color: $color-grey-darker;
+  display: flex;
+  line-height: 59px;
+  transition: color $transition;
+
+  &:hover {
+    color: $color-grey-dark;
+  }
+
+  @include mq('large') {
+    padding: 0 5px;
+  }
+}

@@ -1,0 +1,28 @@
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 850px;
+  margin: 0 auto $space-lg;
+
+  @include mq('large') {
+    flex-direction: row;
+  }
+}
+
+.footer-nav-list__item {
+  margin: 0 10px;
+}
+
+.footer-nav-list__link {
+  display: flex;
+  color: $color-grey-darker;
+  font-size: 24px;
+  line-height: 61px;
+  transition: opacity $transition;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}

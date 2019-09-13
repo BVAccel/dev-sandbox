@@ -1,4 +1,6 @@
 import { focusHash, bindInPageLinks } from '@shopify/theme-a11y';
+import { init as initHeader } from "../components/header";
+import { init as initInstagram } from "../components/instagram";
 
 import 'styles/theme.scss';
 import 'styles/theme.scss.liquid';
@@ -7,7 +9,10 @@ import 'styles/theme.scss.liquid';
 focusHash();
 bindInPageLinks();
 
-document.addEventListener('DOMContentLoaded', () => {});
+document.addEventListener('DOMContentLoaded', () => {
+  initHeader();
+  initInstagram();
+});
 
 window.addEventListener('load', () => {});
 

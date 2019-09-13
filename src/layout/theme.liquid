@@ -1,47 +1,54 @@
 <!doctype html>
-  <!--[if IE 9]> <html class="ie9 no-js supports-no-cookies" lang="{{ shop.locale }}"> <![endif]-->
-  <!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js supports-no-cookies" lang="{{ shop.locale }}"> <!--<![endif]-->
+  <html class="no-js supports-no-cookies" lang="{{ shop.locale }}">
 
   <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="canonical" href="{{ canonical_url }}">
 
-    <!-- Site Meta ============================================ -->
-
+      {%- comment -%}
+        Site Meta
+      {%- endcomment -%}
       {%- include 'favicon' -%}
       {%- include 'page-title' -%}
       {%- include 'page-description' -%}
       {%- include 'social-meta-tags' -%}
 
-    <!-- jQuery =============================================== -->
-
+      {%- comment -%}
+        jQuery
+      {%- endcomment -%}
       <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
       </script>
 
-    <!-- Header Content ======================================= -->
-
+      {%- comment -%}
+        Header Content
+      {%- endcomment -%}
       {{ content_for_header }}
 
-    <!-- Stylesheets ========================================== -->
+      {%- comment -%}
+      Google Fonts
+      {%- endcomment -%}
+      <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
+      {%- comment -%}
+        Stylesheets
+      {%- endcomment -%}
       {%- include 'style-tags', layout: 'theme' -%}
       {%- include 'css-variables' -%}
 
-    <!-- Scripts ============================================== -->
-
+      {%- comment -%}
+        Scripts
+      {%- endcomment -%}
       {%- include 'script-tags', layout: 'theme' -%}
       {%- include 'shop-api' -%}
 
     {% if template.directory == 'customers' %}
       <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
     {% endif %}
-
   </head>
 
   <body
@@ -50,17 +57,25 @@
       data-alternate-template="{{ template.suffix | handle }}"
     {%- endif -%}>
 
-    <a href="#MainContent" class="in-page-link u-visually-hidden">Skip to content</a>
+    <a
+      href="#MainContent"
+      class="in-page-link u-visually-hidden"
+    >
+      Skip to content
+    </a>
 
-    {% comment %}header{% endcomment %}
+    {% include 'header' %}
 
-    <main role="main" class="oo-main" id="MainContent">
-
+    <main
+      role="main"
+      class="oo-main"
+      id="MainContent"
+    >
       {{ content_for_layout }}
-
     </main>
 
-    {% comment %}footer{% endcomment %}
+    {% include 'footer' %}
 
+    {% include 'external-scripts' %}
   </body>
 </html>

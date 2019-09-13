@@ -1,7 +1,3 @@
-/* ==========================================================================
-   # FONT
-   ========================================================================== */
-
 .u-text-center {
   // stylelint-disable-next-line
   text-align: center !important;
@@ -16,14 +12,7 @@
   white-space: nowrap;
 }
 
-/* ==========================================================================
-   # HIDE
-   ========================================================================== */
-
-/**
- * Hide visually and from screen readers.
- */
-
+// Hide visually and from screen readers.
 .u-visually-hidden {
   @include visually-hidden;
 }
@@ -40,19 +29,6 @@
     @include visually-shown;
   }
 }
-
-/* ==========================================================================
-   # CONTAINERS
-   ========================================================================== */
-
-.max-width-container {
-  // max-width: $oo-container-max;
-  margin: 0 auto;
-}
-
-/* ==========================================================================
-   # UTILITY
-   ========================================================================== */
 
 // Skip to content button
 // Overrides .u-visually-hidden when focused
@@ -83,7 +59,7 @@
   margin-top: auto !important;
 }
 
-.u-push- {
+.u-push-bottom {
   margin-bottom: auto !important;
 }
 

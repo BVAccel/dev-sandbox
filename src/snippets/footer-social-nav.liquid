@@ -1,0 +1,46 @@
+<div class="footer-social-nav__container">
+  {%- comment -%}
+  <div class="footer-social-nav__title">
+    Follow YourStore.com
+  </div>
+  {%- endcomment -%}
+
+  <ul class="footer-social-nav">
+    <li class="footer-social-nav__item">
+      <a
+        href="{{ settings.facebook_url }}"
+        target="_blank"
+        class="footer-social-nav__link"
+      >
+        {% include 'icon-social-facebook' %}
+      </a>
+    </li>
+    <li class="footer-social-nav__item">
+      <a
+        href="{{ settings.instagram_url }}"
+        target="_blank"
+        class="footer-social-nav__link"
+      >
+        {% include 'icon-social-instagram' %}
+      </a>
+    </li>
+    <li class="footer-social-nav__item">
+      <a
+        href="{{ settings.pinterest_url }}"
+        target="_blank"
+        class="footer-social-nav__link"
+      >
+        {% include 'icon-social-pinterest' %}
+      </a>
+    </li>
+    <li class="footer-social-nav__item">
+      <a
+        href="{{ settings.twitter_url }}"
+        target="_blank"
+        class="footer-social-nav__link"
+      >
+        {% include 'icon-social-twitter' %}
+      </a>
+    </li>
+  </ul>
+</div>

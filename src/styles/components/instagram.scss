@@ -1,0 +1,33 @@
+.instagram {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $space-md;
+
+  @include mq('large') {
+    margin-bottom: $space-xl;
+  }
+
+  .slick-slide {
+    margin: 0 10px;
+  }
+}
+
+.instagram__title {
+  margin: 0 0 $space-xs;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 36px;
+
+  @include mq('large') {
+    font-size: 38px;
+    line-height: 46px;
+  }
+}
+
+.instagram__container {
+  display: flex;
+  flex-direction: row;
+}
+
+.instagram__img {}

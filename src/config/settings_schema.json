@@ -6,5 +6,63 @@
     "theme_author": "BVAccel",
     "theme_documentation_url": "https://github.com/bvaccel/blank-slate",
     "theme_support_url": "https://github.com/bvaccel/blank-slate/issues"
+  },
+  {
+    "name": "Promobar",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_promobar",
+        "label": "Enable"
+      },
+      {
+        "type": "text",
+        "id": "promobar_text",
+        "label": "Text",
+        "default": "20% OFF on everything",
+        "placeholder": "3 0% OFF on everything"
+      },
+      {
+        "type": "color",
+        "id": "promobar_color",
+        "label": "Color",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "promobar_background_color",
+        "label": "Background color",
+        "default": "#222"
+      }
+    ]
+  },
+  {
+    "name": "Social Links",
+    "settings": [
+      {
+        "type": "text",
+        "id": "facebook_url",
+        "label": "Facebook URL",
+        "default": "https://facebook.com"
+      },
+      {
+        "type": "text",
+        "id": "instagram_url",
+        "label": "Instagram URL",
+        "default": "https://instagram.com"
+      },
+      {
+        "type": "text",
+        "id": "pinterest_url",
+        "label": "Pinterest URL",
+        "default": "https://pinterest.com"
+      },
+      {
+        "type": "text",
+        "id": "twitter_url",
+        "label": "Twitter URL",
+        "default": "https://twitter.com"
+      }
+    ]
   }
 ]

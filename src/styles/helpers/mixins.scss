@@ -1,23 +1,19 @@
-/**
- *  Media query for breakpoint
- *
- *  Accepts:
- *  - $value: {String||Number} Breakpoint name (list found in variables.scss)
- *  - $direction: {String} direction of media query (default: "min")
- *
- *  Usage:
- *
- *  .selector {
- *    @include mq("xs") {
- *      color: red;
- *    }
- *    @include mq(992px) {
- *      color: green;
- *    }
- *  }
- *
- */
-
+// Media query for breakpoint
+//
+// Accepts:
+// - $value: {String||Number} Breakpoint name (list found in variables.scss)
+// - $direction: {String} direction of media query (default: "min")
+//
+// Usage:
+//
+// .selector {
+//   @include mq("xs") {
+//     color: red;
+//   }
+//   @include mq(992px) {
+//     color: green;
+//   }
+// }
 @mixin mq($value, $direction: "min") {
   @if type-of($value) == number and unitless($value) {
     $value: $value + "px";
@@ -35,17 +31,13 @@
   }
 }
 
-/**
- *  Hide element but make it accessible to screen readers
- *
- *  Usage:
- *
- *  .selector {
- *    @include visually-hidden;
- *  }
- *
- */
-
+// Hide element but make it accessible to screen readers
+//
+// Usage:
+//
+// .selector {
+//   @include visually-hidden;
+// }
 @mixin visually-hidden() {
   // stylelint-disable-next-line
   position: absolute !important;
@@ -58,19 +50,15 @@
   clip: rect(0 0 0 0);
 }
 
-/**
- *  Reverse the properties applied by @mixin visually-hidden
- *
- *  Accepts:
- *  - $position: {String} Positioning method for element
- *
- *  Usage:
- *
- *  .selector {
- *    @include visually-shown(relative);
- *  }
- */
-
+// Reverse the properties applied by @mixin visually-hidden
+//
+// Accepts:
+// - $position: {String} Positioning method for element
+//
+// Usage:
+// .selector {
+//   @include visually-shown(relative);
+// }
 @mixin visually-shown($position: inherit) {
   // stylelint-disable-next-line
   position: $position !important;

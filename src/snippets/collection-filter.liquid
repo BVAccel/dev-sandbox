@@ -1,0 +1,21 @@
+<div class="collection-filter">
+  <h4 class="collection-filter__title">
+    {{ filter }}
+  </h4>
+
+  {% assign label = filter | downcase %}
+  {% assign string = 'filter-' | append: label %}
+  {% assign string = string | append: '-' %}
+  {% assign length = string.size %}
+
+  <ul>
+    {% for tag in collection.all_tags %}
+      {% if tag contains string %}
+        {% assign tag_length = tag.size %}
+        <li>
+          {{ tag | slice: length, tag_length}}
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>

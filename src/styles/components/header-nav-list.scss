@@ -1,0 +1,92 @@
+// 1. Core
+// 2. Item 
+// 3. Link 
+// 4. Container
+// 5. Mobile
+// 6. Desktop
+// 7. Right
+
+.header-nav-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-direction: column;
+
+  @include mq('large') {
+    flex-direction: row;
+  }
+}
+
+.header-nav-list__logo {
+  display: none;
+
+  @include mq('large') {
+    display: flex;
+  }
+}
+
+.header-nav-list__item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  @include mq('large') {
+    width: auto;
+  }
+}
+
+.header-nav-list__link {
+  width: 100%;
+  display: flex;
+  padding: 20px;
+  color: $color-grey-darker;
+  justify-content: center;
+  transition: color $transition, background $transition;
+
+  &:hover {
+    color: #fff;
+    background-color: $color-grey-dark;
+  }
+}
+
+.header-nav-list__container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0.01;
+  transition: max-height $transition, opacity $transition;
+
+  @include mq('large') {
+    flex-direction: row;
+    max-height: initial;
+    opacity: 1;
+  }
+
+  &.is-expanded {
+    max-height: 475px;
+    opacity: 1;
+  }
+}
+
+.header-nav-list--mobile {
+  display: flex;
+  align-items: center;
+
+  @include mq('large') {
+    display: none;
+  }
+}
+
+.header-nav-list--desktop {
+  display: none;
+
+  @include mq('large') {
+    display: flex;
+  }
+}
+
+.header-nav-list--right {
+  margin-left: auto;
+}

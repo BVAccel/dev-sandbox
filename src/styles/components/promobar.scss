@@ -1,0 +1,11 @@
+.promobar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $space-2xs;
+}
+
+.promobar__text {
+  font-size: 14px;
+  line-height: 1;
+}

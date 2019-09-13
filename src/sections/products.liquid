@@ -1,0 +1,52 @@
+<section class="products container">
+  <h2 class="products__title">
+    {{ section.settings.heading }}
+  </h2>
+
+  <div class="products__container">
+    {% for product in collections[section.settings.collection].products limit: 4 %}
+      <a
+        href="{{ product.url }}"
+        class="products__product-link"
+      >
+        <div
+          class="products__product"
+          style="background-image: url('{{ product.featured_image | img_url: 'master' }}');"
+        >
+        </div>
+
+        <h3 class="products__product-title">
+          {{ product.title }}
+        </h3>
+        
+        <div class="products__product-price">
+          {{ product.price | money }}
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured products",
+  "settings": [
+    {
+      "id": "heading",
+      "type": "text",
+      "label": "Heading"
+    },
+    {
+      "id": "collection",
+      "type": "collection",
+      "label": "Collection"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Lists",
+      "name": "Product list"
+    }
+  ]
+}
+{% endschema %}

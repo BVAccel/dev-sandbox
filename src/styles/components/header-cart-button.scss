@@ -1,0 +1,22 @@
+.header-cart-button {
+  display: flex;
+  padding: 15px;
+  color: $color-grey-darker;
+  justify-content: center;
+  transition: background $transition;
+
+  &:hover {
+    background-color: $color-grey-dark;
+
+    svg {
+      fill: #fff;
+    }
+  }
+
+  svg {
+    fill: $color-grey-darker;
+    width: 30px;
+    height: 30px;
+    transition: fill $transition;
+  }
+}

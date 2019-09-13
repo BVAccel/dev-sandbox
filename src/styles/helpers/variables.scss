@@ -1,28 +1,58 @@
-// ============================================================================
-//  _____     ______     ______   ______     __  __     __         ______
-// /\  __-.  /\  ___\   /\  ___\ /\  __ \   /\ \/\ \   /\ \       /\__  _\
-// \ \ \/\ \ \ \  __\   \ \  __\ \ \  __ \  \ \ \_\ \  \ \ \____  \/_/\ \/
-//  \ \____-  \ \_____\  \ \_\    \ \_\ \_\  \ \_____\  \ \_____\    \ \_\
-//   \/____/   \/_____/   \/_/     \/_/\/_/   \/_____/   \/_____/     \/_/
-//
-// ============================================================================
-
 $enable-box-sizing-border-box: true;
+
+$columns: 12;
+
+// https://hugogiraudel.com/2013/07/15/understanding-sass-lists/
+$breakpoints: (
+  ('480px',  'xs', 'xsmall'),
+  ('600px',  's', 'small'),
+  ('768px',  'm', 'medium'),
+  ('992px',  'l', 'large'),
+  ('1280px', 'xl', 'xlarge'),
+  ('1440px', 'xxl', 'xxlarge')
+);
+
+$space-3xs: 5px;
+$space-2xs: 10px;
+$space-xs: 15px;
+$space-sm: 20px;
+$space-md: 30px;
+$space-lg: 45px;
+$space-xl: 60px;
+$space-2xl: 90px;
+$space-3xl: 120px;
+
+$color-grey-darker: #4a4a4a;
+$color-grey-dark: #888;
+$color-grey: #979797;
+$color-grey-light: #bbb;
+$color-grey-lighter: #eee;
+
+$color-body-text: #222;
+
+$transition-duration: 250ms;
+$transition-func: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$transition: $transition-duration $transition-func;
+
+$container: 1440px;
+
+$font-primary: 'Roboto', sans-serif;
+
+// $named-widths: (
+//   1: full,
+//   0.5: half,
+//   0.333: third,
+//   0.25: quarter,
+//   0.2: fifth,
+//   0.166: sixth,
+//   0.125: eighth
+// );
 
 // $oo-container-max: var(--size-main-container);
 // $oo-base-spacing-size: var(--size-spacing-base);
 
 // $oo-transition-duration: var(--duration-transition);
 // $oo-transition-timing: ease-in-out;
-
-// ============================================================================
-//   ______     ______     __         ______     ______     ______
-//  /\  ___\   /\  __ \   /\ \       /\  __ \   /\  == \   /\  ___\
-//  \ \ \____  \ \ \/\ \  \ \ \____  \ \ \/\ \  \ \  __<   \ \___  \
-//   \ \_____\  \ \_____\  \ \_____\  \ \_____\  \ \_\ \_\  \/\_____\
-//    \/_____/   \/_____/   \/_____/   \/_____/   \/_/ /_/   \/_____/
-//
-// ===========================================================================
 
 // $color-white: var(--color-default-white);
 // $color-black: var(--color-default-black);
@@ -37,15 +67,6 @@ $enable-box-sizing-border-box: true;
 // $color-body-text: var(--color-body-text);
 // $color-body-background: var(--color-body-background);
 
-// =========================================================================
-//  ______   ______     __   __     ______   ______
-// /\  ___\ /\  __ \   /\ "-.\ \   /\__  _\ /\  ___\
-// \ \  __\ \ \ \/\ \  \ \ \-.  \  \/_/\ \/ \ \___  \
-//  \ \_\    \ \_____\  \ \_\\"\_\    \ \_\  \/\_____\
-//   \/_/     \/_____/   \/_/ \/_/     \/_/   \/_____/
-//
-// =========================================================================
-
 // $font-heading: var(--font-heading);
 // $font-heading-bold-weight: var(--font-heading-bold-weight);
 // $font-primary: var(--font-primary);
@@ -57,35 +78,3 @@ $enable-box-sizing-border-box: true;
 // $font-size-major: var(--size-font-major);
 // $font-size-super: var(--size-font-super);
 // $font-line-height: var(--size-line-height-base);
-
-// =========================================================================
-//  __    __     ______
-// /\ "-./  \   /\  __ \
-// \ \ \-./\ \  \ \ \/\_\
-//  \ \_\ \ \_\  \ \___\_\
-//   \/_/  \/_/   \/___/_/
-//
-// =========================================================================
-
-$breakpoints: (480px xs xsmall, 600px s small, 768px m medium, 992px l large, 1280px xl xlarge, 1440px xxl xxlarge);
-
-// =========================================================================
-//  ______     ______     __     _____
-// /\  ___\   /\  == \   /\ \   /\  __-.
-// \ \ \__ \  \ \  __<   \ \ \  \ \ \/\ \
-//  \ \_____\  \ \_\ \_\  \ \_\  \ \____-
-//   \/_____/   \/_/ /_/   \/_/   \/____/
-//
-// =========================================================================
-
-$columns: 12;
-
-$named-widths: (
-  1: full,
-  0.5: half,
-  0.333: third,
-  0.25: quarter,
-  0.2: fifth,
-  0.166: sixth,
-  0.125: eighth
-);

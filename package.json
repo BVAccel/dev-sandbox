@@ -67,6 +67,7 @@
     "react-apollo": "^2.3.3",
     "react-dom": "^16.7.0",
     "react-select": "^2.3.0",
+    "slick-carousel": "^1.8.1",
     "webpack-merge-and-include-globally": "^2.1.16"
   },
   "scripts": {

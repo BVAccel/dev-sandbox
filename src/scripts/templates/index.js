@@ -1,8 +1,6 @@
 import 'styles/templates/index/index.scss';
-import { init as initSlider } from "../components/slider";
+import { init as initHero } from "../components/hero";
 
-document.addEventListener('DOMContentLoaded', () => {
-  initSlider();
-});
+document.addEventListener('DOMContentLoaded', () => initHero());
 
 window.addEventListener('load', () => {});

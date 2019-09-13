@@ -11,7 +11,7 @@
       >
         <div
           class="collections__collection"
-          style="background-image: url('{{ collections[block.settings.collection].image | img_url: 'master'}}');"
+          style="background-image: url('{{ collections[block.settings.collection].image | img_url: '720x'}}');"
         >
           <h2 class="collections__collection-title">
             {{ block.settings.title }}
@@ -35,13 +35,13 @@
   ],
   "blocks": [
     {
-      "type": "select",
-      "name": "Add collection",
+      "name": "Collection",
+      "type": "collection",
       "settings": [
         {
           "id": "title",
-          "label": "Collection title",
-          "type": "text"
+          "type": "collection-title",
+          "label": "Collection title"
         },
         {
           "id": "collection",

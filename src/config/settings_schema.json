@@ -11,6 +11,11 @@
     "name": "Promobar",
     "settings": [
       {
+        "type": "checkbox",
+        "id": "enable_promobar",
+        "label": "Enable"
+      },
+      {
         "type": "text",
         "id": "promobar_text",
         "label": "Text",

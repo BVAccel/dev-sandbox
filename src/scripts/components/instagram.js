@@ -1,4 +1,4 @@
-import slick from 'slick-carousel';
+import { init as initSlider } from '../components/slider';
 import dom from '../common/Dom';
 
 const config = {
@@ -25,6 +25,6 @@ const config = {
   ]
 };
 
-const bindActions = () => $(dom.instagram).slick(config);
+const bindActions = () => initSlider(dom.instagram, config);
 
 export const init = () => bindActions();

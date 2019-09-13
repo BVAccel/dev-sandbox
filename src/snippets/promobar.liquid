@@ -1,8 +1,10 @@
-<div class="promobar">
-  <div class="promobar__text">
-    {{ settings.promobar_text }}
+{% if settings.enable_promobar != blank %}
+  <div class="promobar">
+    <div class="promobar__text">
+      {{ settings.promobar_text }}
+    </div>
   </div>
-</div>
+{% endif %}
 
 <style>
   .promobar {

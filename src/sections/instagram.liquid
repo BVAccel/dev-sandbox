@@ -8,8 +8,8 @@
   >
     {% for block in section.blocks %}
       <img
-        src="{{ block.settings.image | img_url: 'master' }}"
-        alt="{{ block.settings.text }}"
+        src="{{ block.settings.image | img_url: '300x' }}"
+        alt="{{ block.settings.image.alt | default: block.settings.title }}"
         class="instagram__img"
       />
     {% endfor %}
@@ -29,7 +29,7 @@
   "blocks": [
     {
       "type": "select",
-      "name": "Add image",
+      "name": "Image",
       "settings": [
         {
           "id": "image",

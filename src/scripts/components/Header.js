@@ -1,11 +1,6 @@
 import dom from "../common/Dom";
 
-const bindActions = () => {
-  $(dom.headerHamburger).on('click', () => {
-    $(dom.headerNavListContainer).toggleClass('is-expanded');
-  });
-}
+const toggleNavList = () => $(dom.headerNavListContainer).toggleClass('is-expanded');
+const bindActions = () => $(dom.headerHamburger).on('click', toggleNavList);
 
-export const init = () => {
-  bindActions();
-}
+export const init = () => bindActions();

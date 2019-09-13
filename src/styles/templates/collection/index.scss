@@ -3,3 +3,8 @@
 
 @import '../../components/collection-filters';
 @import '../../components/collection-filter';
+@import '../../components/collection-cards';
+
+.collection__page {
+  display: flex;
+}

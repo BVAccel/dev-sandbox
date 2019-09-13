@@ -1,3 +1,7 @@
-{% include 'collection-filters' %}
-{% include 'collection-cards' %}
+{%- comment -%}
 {% include 'collection-sort' %}
+{%- endcomment -%}
+<div class="collection__page">
+  {% include 'collection-filters' %}
+  {% include 'collection-cards' %}
+</div>

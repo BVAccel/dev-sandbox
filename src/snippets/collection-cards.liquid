@@ -1,8 +1,19 @@
 <div class="collection-cards">
-  <h2>Collection cards</h2>
+  {% if collection.products %}
+    <h2 class="collection-cards__title">
+      {{ collection.title }}
 
-  {% include 'collection-card' %}
-  {% include 'collection-card' %}
-  {% include 'collection-card' %}
-  {% include 'collection-card' %}
+      (<span class="collection-cards__title-count">{{ collection.all_products_count }}</span>)
+    </h2>
+
+    <p class="collection-cards__description">
+      {{ collection.description }}
+    </p>
+  {% endif %}
+
+  <div class="collection-cards__container">
+    {% for product in collection.products %}
+      {% include 'collection-card' %}
+    {% endfor %}
+  </div>
 </div>

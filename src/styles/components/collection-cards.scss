@@ -1,6 +1,16 @@
 .collection-cards {
   display: flex;
-  flex: 3;
-  width: 75%;
-  background-color: pink;
+  flex-direction: column;
+  flex-basis: 100%;
+  width: 100%;
+
+  @include mq('large') {
+    flex-basis: 75%;
+    width: 75%;
+  }
+}
+
+.collection-cards__container {
+  display: flex;
+  flex-wrap: wrap;
 }

@@ -1,0 +1,66 @@
+.collection-card {}
+
+.collection-card__link {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  width: 50%;
+  padding: 5px;
+  border: 1px solid $color-grey;
+
+  &:hover {
+    .collection-card__variants {
+      max-height: initial;
+      opacity: 1;
+    }
+  }
+
+  @include mq('large') {
+    flex-basis: 25%;
+    width: 25%;
+  }
+}
+
+.collection-card__img {
+  height: 0;
+  padding-bottom: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.collection-card__colors {
+  color: $color-grey-darker;
+}
+
+.collection-card__title {}
+.collection-card__price {
+  color: $color-grey-darker;
+}
+
+.collection-card__variants {
+  display: flex;
+  overflow-x: scroll;
+  margin: 0 -5px;
+  max-height: 0;
+  opacity: 0.01;
+  transition: max-height $transition, opacity $transition;
+}
+
+.collection-card__variants-img {
+  display: flex;
+  margin: 0 5px;
+  height: 50px;
+  width: 50px;
+  border: 1px solid $color-grey;
+  padding: 5px;
+}
+
+.collection-card__variants-img-link {
+  // display: flex;
+  // margin: 0 5px;
+  // max-height: 50px;
+  // width: 50px;
+  // border: 1px solid $color-grey;
+  // padding: 5px;
+}

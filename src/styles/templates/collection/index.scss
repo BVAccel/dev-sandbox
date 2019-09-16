@@ -1,10 +1,8 @@
 // Helpers
 @import '../../helpers/index';
 
+@import '../../components/collection-page';
 @import '../../components/collection-filters';
 @import '../../components/collection-filter';
 @import '../../components/collection-cards';
-
-.collection__page {
-  display: flex;
-}
+@import '../../components/collection-card';

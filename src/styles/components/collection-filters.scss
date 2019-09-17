@@ -4,6 +4,7 @@
   flex-direction: column;
   flex: 1;
   width: 25%;
+  height: calc(100% - 60px);
   padding: $space-sm;
   background-color: #fff;
   width: 320px;
@@ -19,6 +20,7 @@
     display: flex;
     position: relative;
     transform: translate(0, 0);
+    height: auto;
   }
 }
 

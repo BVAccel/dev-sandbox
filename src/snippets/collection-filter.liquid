@@ -1,8 +1,7 @@
-<div class="collection-filter">
-  <h4 class="collection-filter__title">
-    {{ filter }}
-  </h4>
-
+<div
+  class="collection-filter"
+   data-collection-filter-container
+>
   {% assign label = filter | downcase %}
   {% assign string = 'filter-' | append: label %}
   {% assign string = string | append: '-' %}

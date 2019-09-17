@@ -24,7 +24,11 @@ const dom = {
   headerNav: '[data-header-navbar]',
   headerNavListContainer: '[data-header-nav-list-container]',
   slider: '[data-slider]',
-  instagram: '[data-instagram]'
+  instagram: '[data-instagram]',
+  collectionFilters: '[data-collection-filters]',
+  collectionFiltersTitle: '[data-collection-filter-title]',
+  collectionFiltersTitleAttr: 'data-collection-filter-title',
+  collectionFiltersContainer: '[data-collection-filter-container]',
 };
 
 export default dom;

@@ -2,10 +2,18 @@
   display: flex;
   flex: 1;
   background-color: #ccc;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height $transition;
+
+  &.is-expanded {
+    max-height: 150px;
+  }
 }
 
 .collection-filter__title {
   font-size: 16px;
+  line-height: 22px;
 }
 
 .collection-filter__swatch-container {

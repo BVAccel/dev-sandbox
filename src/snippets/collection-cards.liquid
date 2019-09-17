@@ -4,6 +4,10 @@
       {{ collection.title }}
 
       (<span class="collection-cards__title-count">{{ collection.all_products_count }}</span>)
+
+      <button class="collection-cards__filter-toggle" data-filter-toggle>
+        {% include 'icon-hamburger' %}
+      </button>
     </h2>
 
     <p class="collection-cards__description">

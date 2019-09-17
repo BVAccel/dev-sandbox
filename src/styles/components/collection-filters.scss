@@ -1,12 +1,24 @@
 .collection-filters {
-  display: none;
+  display: flex;
+  position: absolute;
   flex-direction: column;
   flex: 1;
   width: 25%;
-  background-color: #eee;
+  padding: $space-sm;
+  background-color: #fff;
+  width: 320px;
+  transform: translate(-320px, 0);
+  transition: transform $transition;
+
+  &.is-expanded {
+    transform: translate(0, 0);
+    box-shadow: 0 0 10px $color-grey;
+  }
 
   @include mq('large') {
     display: flex;
+    position: relative;
+    transform: translate(0, 0);
   }
 }
 

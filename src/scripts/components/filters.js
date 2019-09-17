@@ -38,6 +38,10 @@ export const bindUIActions = () => {
       $targetElement.is(expandedEl) ? shrink() : expand($targetElement);
     }
   });
+
+  $(dom.collectionFilterToggle).on('click', event => {
+    $(dom.collectionFilters).toggleClass('is-expanded');
+  });
 };
 
 export const init = () => bindUIActions();

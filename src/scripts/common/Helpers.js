@@ -1,5 +1,5 @@
-import dom from 'common/Dom';
-import bva from 'common/Constants';
+import dom from './Dom';
+import bva from './Constants';
 
 export const $$ = (selector) => {
   const nodes = document.querySelectorAll(selector);

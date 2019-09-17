@@ -13,7 +13,10 @@
         {% assign tag_length = tag.size %}
 
         <li class="collection-filter__item">
-          <a href="/collections/{{ collection.handle }}/{{ tag }}">
+          <a
+            href="/collections/{{ collection.handle }}/{{ tag }}"
+            class="collection-filter__item-link"
+          >
             {{ tag | slice: length, tag_length }}
           </a>
         </li>

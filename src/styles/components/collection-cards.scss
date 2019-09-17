@@ -10,7 +10,26 @@
   }
 }
 
+.collection-cards__title {
+  display: flex;
+  align-items: center;
+}
+
 .collection-cards__container {
   display: flex;
   flex-wrap: wrap;
+}
+
+.collection-cards__filter-toggle {
+  display: flex;
+  margin-left: auto;
+
+  > svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  @include mq('large') {
+    display: none;
+  }
 }

@@ -11,6 +11,10 @@
     data-collection-filter-title
   >
     Color
+
+    <div class="collection-filter__title-icon">
+      {% include 'icon-plus' %}
+    </div>
   </h4>
   {% include 'collection-filter-color' %}
 
@@ -19,6 +23,10 @@
     data-collection-filter-title
   >
     Size
+
+    <div class="collection-filter__title-icon">
+      {% include 'icon-plus' %}
+    </div>
   </h4>
   {% assign filter = 'Size' %}
   {% include 'collection-filter' with filter %}
@@ -28,6 +36,10 @@
     data-collection-filter-title
   >
     Brand
+
+    <div class="collection-filter__title-icon">
+      {% include 'icon-plus' %}
+    </div>
   </h4>
   {% assign filter = 'Brand' %}
   {% include 'collection-filter' with filter %}

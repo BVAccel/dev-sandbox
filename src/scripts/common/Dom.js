@@ -29,7 +29,8 @@ const dom = {
   collectionFiltersTitle: '[data-collection-filter-title]',
   collectionFiltersTitleAttr: 'data-collection-filter-title',
   collectionFiltersContainer: '[data-collection-filter-container]',
-  collectionFilterToggle: '[data-filter-toggle]'
+  collectionFilterToggle: '[data-filter-toggle]',
+  collectionSort: '[data-collection-sort]'
 };
 
 export default dom;

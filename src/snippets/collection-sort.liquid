@@ -1,29 +1,12 @@
-<div class="collection-sort">
+<nav class="collection-sort">
   <select
     class="collection-sort__select"
     data-collection-sort
-    >
+  >
     <option value="manual">Sort</option>
     <option value="price-ascending">$</option>
     <option value="price-descending">$$$</option>
     <option value="created-descending">Newest</option>
     <option value="best-selling">Popular</option>
   </select>
-</div>
-<script>
-  Shopify.queryParams = {};
-  if (location.search.length) {
-    for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
-      aKeyValue = aCouples[i].split('=');
-      if (aKeyValue.length > 1) {
-        Shopify.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
-      }
-    }
-  }
-  jQuery('[data-collection-sort]')
-    .val('{{ collection.sort_by | default: collection.default_sort_by | escape }}')
-    .bind('change', function () {
-      Shopify.queryParams.sort_by = jQuery(this).val();
-      location.search = jQuery.param(Shopify.queryParams).replace(/\+/g, '%20');
-    });
-</script>
+</nav>

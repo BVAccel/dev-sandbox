@@ -3,6 +3,10 @@
 // Uncomment to include normalize.css
 // @import '~normalize.css/normalize';
 
+// Vendors
+@import "vendor/slick/slick.scss";
+@import "vendor/slick/slick-theme.scss";
+
 // Helpers
 @import 'helpers/index';
 

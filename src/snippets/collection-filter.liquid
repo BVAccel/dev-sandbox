@@ -1,26 +1,45 @@
+<h4
+  class="collection-filter__title"
+  data-collection-filter-title
+>
+  {{ label | capitalize }}
+
+  <div class="collection-filter__title-icon">
+    {% include 'icon-plus' %}
+  </div>
+</h4>
+
 <div
   class="collection-filter"
   data-collection-filter-container
 >
-  {% assign label = filter | downcase %}
-  {% assign string = 'filter-' | append: label %}
-  {% assign string = string | append: '-' %}
-  {% assign length = string.size %}
-
   <ul class="collection-filter__list">
-    {% for tag in collection.all_tags %}
-      {% if tag contains string %}
-        {% assign tag_length = tag.size %}
-
-        <li class="collection-filter__item">
-          <a
-            href="/collections/{{ collection.handle }}/{{ tag }}"
-            class="collection-filter__item-link"
-          >
-            {{ tag | slice: length, tag_length }}
-          </a>
-        </li>
+    {% for value in values %}
+      {% if label == 'color' %}
+        {% assign swatchStyles = 'style="display: inline-block;"' %}
       {% endif %}
+
+      <li
+        class="collection-filter__item"
+        {% if label == 'color' %}
+          style="display: inline-block;"
+        {% endif %}
+      >
+        <a
+          href="/collections/{{ collection.handle }}/filter-{{ label }}-{{ value }}"
+          class="collection-filter__item-link"
+        >
+          {% if label == 'color' %}
+            <div
+              class="collection-filter__swatch"
+              style="background-color: {{ value }}"
+            >
+            </div>
+          {% else %}
+            {{ value }}
+          {% endif %}
+        </a>
+      </li>
     {% endfor %}
   </ul>
 </div>

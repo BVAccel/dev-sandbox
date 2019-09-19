@@ -1,3 +1,28 @@
+{%- comment -%}
+  Create filter variables
+  This method works if filters are known in advance
+{%- endcomment -%}
+{% assign color_filters = '' %}
+{% assign brand_filters = '' %}
+{% assign size_filters = '' %}
+
+{% for tag in collection.all_tags %}
+  {% if tag contains 'filter-color-' %}
+    {% assign color = tag | remove: 'filter-color-' %}
+    {% assign color_filters = color_filters | append: color | append: ',' %}
+  {% elsif tag contains 'filter-brand-' %}
+    {% assign brand = tag | remove: 'filter-brand-' %}
+    {% assign brand_filters = brand_filters | append: brand | append: ',' %}
+  {% elsif tag contains 'filter-size-' %}
+    {% assign size = tag | remove: 'filter-size-' %}
+    {% assign size_filters = size_filters | append: size | append: ',' %}
+  {% endif %}
+{% endfor %}
+
+{% assign color_filters = color_filters | split: ',' %}
+{% assign brand_filters = brand_filters | split: ',' %}
+{% assign size_filters = size_filters | split: ',' %}
+
 <div
   class="collection-filters"
   data-collection-filters
@@ -6,41 +31,7 @@
     Filters
   </h3>
 
-  <h4
-    class="collection-filter__title"
-    data-collection-filter-title
-  >
-    Color
-
-    <div class="collection-filter__title-icon">
-      {% include 'icon-plus' %}
-    </div>
-  </h4>
-  {% include 'collection-filter-color' %}
-
-  <h4
-    class="collection-filter__title"
-    data-collection-filter-title
-  >
-    Size
-
-    <div class="collection-filter__title-icon">
-      {% include 'icon-plus' %}
-    </div>
-  </h4>
-  {% assign filter = 'Size' %}
-  {% include 'collection-filter' with filter %}
-
-  <h4
-    class="collection-filter__title"
-    data-collection-filter-title
-  >
-    Brand
-
-    <div class="collection-filter__title-icon">
-      {% include 'icon-plus' %}
-    </div>
-  </h4>
-  {% assign filter = 'Brand' %}
-  {% include 'collection-filter' with filter %}
+  {% include 'collection-filter', label: 'color', values: color_filters %}
+  {% include 'collection-filter', label: 'brand', values: brand_filters %}
+  {% include 'collection-filter', label: 'size', values: size_filters %}
 </div>

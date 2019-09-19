@@ -1,16 +1,18 @@
 <div class="collection-cards">
   {% if collection.products %}
-    <h2 class="collection-cards__title">
-      {{ collection.title }}
-
-      (<span class="collection-cards__title-count">{{ collection.all_products_count }}</span>)
-
+    <div class="collection-cards__title-container">
+      <h2 class="collection-cards__title">
+        {{ collection.title }}
+  
+        (<span class="collection-cards__title-count">{{ collection.all_products_count }}</span>)
+      </h2>
+  
       <button class="collection-cards__filter-toggle" data-filter-toggle>
         {% include 'icon-filters' %}
       </button>
-    </h2>
 
-    {% include 'collection-sort' %}
+      {% include 'collection-sort' %}
+    </div>
 
     <p class="collection-cards__description">
       {{ collection.description }}

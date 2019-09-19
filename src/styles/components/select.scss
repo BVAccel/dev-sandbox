@@ -1,5 +1,13 @@
 // @import '//fonts.googleapis.com/css?family=Open+Sans:400,600';
 
+.edd-root {
+  margin-left: auto;
+
+  @include mq('large') {
+    margin-left: initial;
+  }
+}
+
 .edd-root,
 .edd-root *,
 .edd-root *::before,

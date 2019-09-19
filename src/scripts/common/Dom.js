@@ -30,7 +30,8 @@ const dom = {
   collectionFiltersTitleAttr: 'data-collection-filter-title',
   collectionFiltersContainer: '[data-collection-filter-container]',
   collectionFilterToggle: '[data-filter-toggle]',
-  collectionSort: '[data-collection-sort]'
+  collectionSort: '[data-collection-sort]',
+  customSelect: '[data-custom-select]'
 };
 
 export default dom;

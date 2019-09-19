@@ -1,8 +1,8 @@
 import easydropdown from 'easydropdown';
-// import dom from '../common/Dom';
+import dom from '../common/Dom';
 
 export default () => {
-  return easydropdown(document.querySelector('[data-custom-select]'), {
+  return easydropdown(document.querySelector(dom.customSelect), {
     behavior: {
       clampMaxVisibleItems: false,
       closeOnSelect: true,

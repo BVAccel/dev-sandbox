@@ -1,7 +1,8 @@
-<nav class="collection-sort">
+<nav class="collection-sort__container">
   <select
-    class="collection-sort__select"
+    class="collection-sort collection-sort--mobile"
     data-collection-sort
+    data-custom-select
   >
     <option value="manual">Sort</option>
     <option value="price-ascending">$</option>
@@ -9,4 +10,34 @@
     <option value="created-descending">Newest</option>
     <option value="best-selling">Popular</option>
   </select>
+
+  <div
+    class="collection-sort collection-sort--desktop"
+    data-collection-sort
+  >
+    <button
+      value="price-ascending"
+      class="collection-sort__btn"
+    >
+      $
+    </button>
+    <button
+      value="price-descending"
+      class="collection-sort__btn"
+    >
+      $$$
+    </button>
+    <button
+      value="created-descending"
+      class="collection-sort__btn"
+    >
+      Newest
+    </button>
+    <button
+      value="best-selling"
+      class="collection-sort__btn"
+    >
+      Popular
+    </button>
+  </div>
 </nav>

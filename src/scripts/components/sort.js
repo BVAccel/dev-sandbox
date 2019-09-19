@@ -1,13 +1,16 @@
 import dom from '../common/Dom';
 import select from './select';
 
-const breakpoint = 993;
-const isMobile = () => window.innerWidth < breakpoint;
-
+// Get Mobile and Desktop sort elements
 const $select = $($(dom.collectionSort)[0]);
 const $buttons = $($(dom.collectionSort)[1]);
 
-export const bindUIActions = () => {
+const initSelectSort = () => {
+  const defaultSortBy = $select.attr('data-collection-sort');
+  $select.val(defaultSortBy)
+};
+
+const shopifyQueryParams = () => {
   Shopify.queryParams = {};
 
   if (location.search.length) {
@@ -25,32 +28,23 @@ export const bindUIActions = () => {
       }
     }
   }
-  // console.log('Mobile', $(dom.collectionSort)[0])
-  // console.log('Desktop', $(dom.collectionSort)[1])
+}
 
-  console.log('isMobile()', isMobile())
-  console.log('window.innerWidth', window.innerWidth)
+export const bindUIActions = () => {
+  $select.on('change', function() {
+    Shopify.queryParams.sort_by = $(this).val();
+    location.search = $.param(Shopify.queryParams).replace(/\+/g, '%20');
+  });
 
-  if (isMobile()) {
-    console.log('Mobile els', $(dom.collectionSort)[0])
-
-    $select
-      .val('{{ collection.sort_by | default: collection.default_sort_by | escape }}')
-      .bind('change', function() {
-        Shopify.queryParams.sort_by = $(this).val();
-        location.search = $.param(Shopify.queryParams).replace(/\+/g, '%20');
-      });
-  } else {
-    console.log('Desktop els', $(dom.collectionSort)[1])
-    $buttons.on('click', event => {
-      console.log($(event.target).attr('value'));
-      Shopify.queryParams.sort_by = $(event.target).attr('value')
-      location.search = $.param(Shopify.queryParams).replace(/\+/g, '%20');
-    })
-  }
+  $buttons.on('click', event => {
+    Shopify.queryParams.sort_by = $(event.target).attr('value')
+    location.search = $.param(Shopify.queryParams).replace(/\+/g, '%20');
+  });
 };
 
 export const init = () => {
+  initSelectSort();
   select();
+  shopifyQueryParams();
   bindUIActions();
 }

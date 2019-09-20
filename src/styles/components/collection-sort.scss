@@ -1,5 +1,12 @@
 .collection-sort__container {
+  display: flex;
+  height: 60px;
+  align-items: center;
+
   @include mq('large') {
+    height: initial;
+    align-items: initial;
+
     .edd-root {
       display: none;
     }

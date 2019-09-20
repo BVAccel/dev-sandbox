@@ -17,6 +17,7 @@
   justify-content: space-between;
 
   @include mq('large') {
+    margin: 30px 0;
     flex-wrap: nowrap;
   }
 }
@@ -25,9 +26,11 @@
   display: flex;
   flex-basis: 100%;
   justify-content: center;
+  margin: 0 0 15px;
 
   @include mq('large') {
     flex-basis: initial;
+    margin: 0;
   }
 }
 
@@ -58,5 +61,14 @@
 
   @include mq('large') {
     display: none;
+  }
+}
+
+.collection-cards__description {
+  font-size: 18px;
+  text-align: center;
+
+  @include mq('large') {
+    text-align: left;
   }
 }

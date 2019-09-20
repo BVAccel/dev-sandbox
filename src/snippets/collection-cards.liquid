@@ -20,8 +20,14 @@
   {% endif %}
 
   <div class="collection-cards__container">
-    {% for product in collection.products %}
-      {% include 'collection-card' %}
-    {% endfor %}
+    {%- paginate collection.products by 4 -%}
+      {%- for product in collection.products -%}
+        {% include 'collection-card' %}
+      {%- endfor -%}
+
+      <div class="pagination">
+        {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
+      </div>
+    {%- endpaginate -%}
   </div>
 </div>

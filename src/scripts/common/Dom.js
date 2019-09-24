@@ -31,7 +31,14 @@ const dom = {
   collectionFiltersContainer: '[data-collection-filter-container]',
   collectionFilterToggle: '[data-filter-toggle]',
   collectionSort: '[data-collection-sort]',
-  customSelect: '[data-custom-select]'
+  customSelect: '[data-custom-select]',
+  inlineCart: '[data-inline-cart]',
+  inlineCartToggle: '[data-inline-cart-toggle]',
+  inlineCartClose: '[data-inline-cart-close]',
+  lineItemEntryPoint: '[data-cart-contents]',
+  cartLineItem: '[data-cart-line-item]',
+  cartLineItemPrice: '[data-cart-line-item-price]',
+  cartLineItemRemove: '[data-cart-line-item-remove]'
 };
 
 export default dom;

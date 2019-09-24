@@ -1,6 +1,7 @@
 import { focusHash, bindInPageLinks } from '@shopify/theme-a11y';
-import { init as initHeader } from "../components/header";
-import { init as initInstagram } from "../components/instagram";
+import { init as initHeader } from '../components/header';
+import { init as initInstagram } from '../components/instagram';
+import { init as initInlineCart } from '../components/inline-cart';
 
 import 'styles/theme.scss';
 import 'styles/theme.scss.liquid';
@@ -12,6 +13,7 @@ bindInPageLinks();
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initInstagram();
+  initInlineCart();
 });
 
 window.addEventListener('load', () => {});

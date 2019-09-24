@@ -1,0 +1,39 @@
+<section
+  class="inline-cart__container"
+  data-inline-cart
+>
+  <div class="inline-cart__header">
+    REVIEW YOUR CART
+    <button
+      class="inline-cart__btn"
+      data-inline-cart-close
+    >X
+    </button>
+  </div>
+
+  <div class="inline-cart__count">
+    {{ cart.item_count }} items in your cart
+  </div>
+
+  <div class="inline-cart__content-container">
+    <div
+      class="inline-cart__content"
+      data-cart-contents
+    ></div>
+
+    {% if cart.item_count > 0 %}
+      <hr>
+      <p class="inline-cart__subtotal-container">
+        Subtotal:
+        <span class="inline-cart__subtotal-container"></span>
+      </p>
+      <a
+        href="/checkout"
+        name="checkout"
+        class="inline-cart__btn"
+      >
+        CHECK OUT
+      </a>
+    {% endif %}
+  </div>
+</section>

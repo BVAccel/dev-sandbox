@@ -35,10 +35,18 @@ const dom = {
   inlineCart: '[data-inline-cart]',
   inlineCartToggle: '[data-inline-cart-toggle]',
   inlineCartClose: '[data-inline-cart-close]',
+  inlineCartSubtotal: '[data-inline-cart-subtotal]',
   lineItemEntryPoint: '[data-cart-contents]',
   cartLineItem: '[data-cart-line-item]',
   cartLineItemPrice: '[data-cart-line-item-price]',
-  cartLineItemRemove: '[data-cart-line-item-remove]'
+  cartLineItemRemove: '[data-cart-line-item-remove]',
+  cartLineItemEdit: '[data-cart-line-item-edit]',
+  cartLineItemEditPlus: '[data-cart-line-item-edit-plus]',
+  cartLineItemEditMinus: '[data-cart-line-item-edit-minus]',
+  cartLineItemEditQty: '[data-cart-line-item-edit-qty]',
+  cartLineItemExpand: '[data-cart-line-item-expand]',
+  cartLineItemSubtotal: '[data-cart-line-item-subtotal]',
+  cartLineItemEditContainer: '[data-cart-line-item-edit-container]',
 };
 
 export default dom;

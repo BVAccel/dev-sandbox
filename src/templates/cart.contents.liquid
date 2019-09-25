@@ -1,6 +1,10 @@
 {% layout none %}
 {% for line_item in cart.items %}
-<div class="cart-line-item" data-cart-line-item data-cart-line-item-product-id={{ line_item.product_id }}>
+<div
+  class="cart-line-item"
+  data-cart-line-item
+  data-cart-line-item-product-variant-id={{ line_item.variant_id }}
+>
   <div class="cart-line-item__image">
     <img src="{{ line_item.product.featured_image | img_url: 'small' }}" alt="{{ line_item.product.description }}" />
   </div>
@@ -11,7 +15,10 @@
     </div>
 
     <div class="cart-line-item__container-extra">
-      <div class="cart-line-item__quantity">
+      <div
+        class="cart-line-item__quantity"
+        data-cart-line-item-qty
+      >
         QTY: {{ line_item.quantity }}
       </div>
     

@@ -1,3 +1,4 @@
+import dom from '../common/Dom';
 import 'styles/templates/product/index.scss';
 import {
   update as updateInlineCart,
@@ -6,6 +7,9 @@ import {
 } from '../components/inline-cart'
 
 const tease = () => {
+  const inlineCartCount = $(dom.inlineCartCount).html();
+  $(dom.inlineCartCount).html(parseInt(inlineCartCount) + 1);
+
   showInlineCart();
 
   setTimeout(() => {

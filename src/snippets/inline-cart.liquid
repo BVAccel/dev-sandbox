@@ -12,8 +12,10 @@
     </button>
   </div>
 
-  <div class="inline-cart__count">
-    {{ cart.item_count }} items in your cart
+  <div
+    class="inline-cart__count"
+  >
+    <span data-inline-cart-count>{{ cart.item_count }}</span>&nbsp;items in your cart
   </div>
 
   <div class="inline-cart__content-container">

@@ -33,6 +33,7 @@ const dom = {
   collectionSort: '[data-collection-sort]',
   customSelect: '[data-custom-select]',
   inlineCart: '[data-inline-cart]',
+  inlineCartCount: '[data-inline-cart-count]',
   inlineCartToggle: '[data-inline-cart-toggle]',
   inlineCartClose: '[data-inline-cart-close]',
   inlineCartSubtotal: '[data-inline-cart-subtotal]',

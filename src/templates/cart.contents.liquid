@@ -1,26 +1,69 @@
 {% layout none %}
 {% for line_item in cart.items %}
-<div class="cart__line-item" data-cart-line-item>
-  <div class="cart__line-item-image">
+<div class="cart-line-item" data-cart-line-item>
+  <div class="cart-line-item__image">
     <img src="{{ line_item.product.featured_image | img_url: 'small' }}" alt="{{ line_item.product.description }}" />
   </div>
 
-  <div class="cart__line-item-title">
-    Title: {{ line_item.title }}
+  <div class="cart-line-item__container">
+    <div class="cart-line-item__title">
+      {{ line_item.title }}
+    </div>
+
+    <div class="cart-line-item__container-extra">
+      <div class="cart-line-item__quantity">
+        QTY: {{ line_item.quantity }}
+      </div>
+    
+      <div class="cart-line-item__price" data-cart-line-item-price>
+        {{ line_item.price | money }}
+      </div>
+
+      <button
+        class="cart-line-item__expand"
+        data-cart-line-item-expand
+      >
+        {% include 'icon-arrow-down' %}
+      </button>
+    </div>
+
+    <div class="cart-line-item__edit-container">
+      <div class="cart-line-item__edit-title">
+        Edit Quantity
+      </div>
+      <div
+        class="cart-line-item__edit"
+        data-cart-line-item-edit
+      >
+        <button
+          class="cart-line-item__edit-btn"
+          data-cart-line-item-edit-minus
+        >-</button>
+        <div
+          class="cart-line-item__edit-qty"
+          data-cart-line-item-edit-qty
+        >1</div>
+        <button
+          class="cart-line-item__edit-btn"
+          data-cart-line-item-edit-plus
+        >+</button>
+      </div>
+    </div>
   </div>
 
-  <div class="cart__line-item-price" data-cart-line-item-price>
-    Price: {{ line_item.price }}
-  </div>
-
-  <div class="cart__line-item-remove" data-variant-id="{{ line_item.variant_id }}" data-cart-line-item-remove>
+  <div
+    class="cart-line-item__remove"
+    data-variant-id="{{ line_item.variant_id }}"
+    data-cart-line-item-remove
+  >
     Remove item
-  </div>
-
-  <div class="cart__line-item-quantity">
-    QTY: {{ line_item.quantity }}
   </div>
 </div>
 {% endfor %}
 
-<div class="subtotal">Subtotal: {{ cart.total_price }}</div>
+<div
+  class="cart-line-item__subtotal"
+  data-cart-line-item-subtotal
+>
+  Subtotal: {{ cart.total_price }}
+</div>

@@ -16,6 +16,9 @@ const bindUIActions = () => {
 
   $(dom.inlineCartToggle).on('click', () => $(dom.inlineCart).toggleClass('is-active'));
   $(dom.inlineCartClose).on('click', hide);
+  // $('[data-cart-line-item-expand]').on('click', () => {
+  //   console.log('expand');
+  // })
 }
 
 export const init = () => bindUIActions();

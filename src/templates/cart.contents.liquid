@@ -26,47 +26,59 @@
         {% include 'icon-arrow-down' %}
       </button>
     </div>
-
-    <div
-      class="cart-line-item__edit-container"
-      data-cart-line-item-edit-container
-    >
-      <div class="cart-line-item__edit-title">
-        Edit Quantity
-      </div>
-      <div
-        class="cart-line-item__edit"
-        data-cart-line-item-edit
-      >
-        <button
-          class="cart-line-item__edit-btn"
-          data-cart-line-item-edit-minus
-        >-</button>
-        <div
-          class="cart-line-item__edit-qty"
-          data-cart-line-item-edit-qty
-        >1</div>
-        <button
-          class="cart-line-item__edit-btn"
-          data-cart-line-item-edit-plus
-        >+</button>
-      </div>
-    </div>
   </div>
 
   <div
-    class="cart-line-item__remove"
-    data-variant-id="{{ line_item.variant_id }}"
-    data-cart-line-item-remove
+    class="cart-line-item__edit-container"
+    data-cart-line-item-edit-container
   >
-    Remove item
+    <div class="cart-line-item__edit-title">
+      Edit Quantity
+    </div>
+    <div
+      class="cart-line-item__edit"
+      data-cart-line-item-edit
+    >
+      <button
+        class="cart-line-item__edit-btn"
+        data-cart-line-item-edit-minus
+      >-</button>
+      <div
+        class="cart-line-item__edit-qty"
+        data-cart-line-item-edit-qty
+      >1</div>
+      <button
+        class="cart-line-item__edit-btn"
+        data-cart-line-item-edit-plus
+      >+</button>
+    </div>
+    <button
+      class="cart-line-item__remove"
+      data-variant-id="{{ line_item.variant_id }}"
+      data-cart-line-item-remove
+    >
+      Remove item
+    </button>
   </div>
 </div>
 {% endfor %}
 
-<div
-  class="cart-line-item__subtotal"
-  data-cart-line-item-subtotal
->
-  Subtotal: {{ cart.total_price }}
-</div>
+{% if cart.item_count > 0 %}
+  <div class="cart-line-item__footer">
+    <hr>
+    <div
+      class="cart-line-item__subtotal"
+      data-inline-cart-subtotal
+    >
+      Subtotal: {{ cart.total_price }}
+    </div>
+    <a
+      href="/checkout"
+      name="checkout"
+      class="cart-line-item__checkout"
+      data-inline-cart-checkout
+    >
+      CHECK OUT
+    </a>
+  </div>
+{% endif %}

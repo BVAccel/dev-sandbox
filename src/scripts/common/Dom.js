@@ -36,6 +36,7 @@ const dom = {
   inlineCartToggle: '[data-inline-cart-toggle]',
   inlineCartClose: '[data-inline-cart-close]',
   inlineCartSubtotal: '[data-inline-cart-subtotal]',
+  inlineCartCheckout: '[data-inline-cart-checkout]',
   lineItemEntryPoint: '[data-cart-contents]',
   cartLineItem: '[data-cart-line-item]',
   cartLineItemPrice: '[data-cart-line-item-price]',

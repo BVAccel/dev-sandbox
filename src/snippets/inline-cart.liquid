@@ -21,20 +21,5 @@
       class="inline-cart__content"
       data-cart-contents
     ></div>
-
-    {% if cart.item_count > 0 %}
-      <hr>
-      <p class="inline-cart__subtotal-container">
-        Subtotal:
-        <span class="inline-cart__subtotal" data-inline-cart-subtotal></span>
-      </p>
-      <a
-        href="/checkout"
-        name="checkout"
-        class="inline-cart__checkout"
-      >
-        CHECK OUT
-      </a>
-    {% endif %}
   </div>
 </section>

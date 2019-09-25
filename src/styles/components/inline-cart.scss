@@ -7,7 +7,7 @@
   align-items: center;
   width: 320px;
   height: 100vh;
-  background-color: $color-grey-lighter;
+  background-color: #fff;
   transform: translateX(100%);
   transition: transform $transition;
   z-index: 2000;
@@ -21,6 +21,7 @@
 .inline-cart__content {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .inline-cart__content-container {
@@ -62,13 +63,12 @@
 
 .inline-cart__count {
   display: flex;
+  width: 100%;
   height: 40px;
   font-size: 10px;
   line-height: 10px;
   color: $color-grey-dark;
   justify-content: center;
   align-items: center;
+  background-color: $color-grey-lighter;
 }
-
-.inline-cart__subtotal {}
-.inline-cart__subtotal-container {}

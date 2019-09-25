@@ -4,7 +4,7 @@ export const show = () => $(dom.inlineCart).addClass('is-active');
 
 export const hide = () => $(dom.inlineCart).removeClass('is-active');
 
-const expand = () => {
+const handleExpand = () => {
   $(dom.lineItemEntryPoint).on('click', event => {
     const target = event.target;
 
@@ -21,10 +21,37 @@ const expand = () => {
   });
 }
 
+const handleQty = () => {
+  $(dom.lineItemEntryPoint).on('click', event => {
+    const target = event.target;
+
+    if (target.matches(dom.cartLineItemEditPlus)) {
+      const qty = new Number($(target).prev().html()) + 1;
+
+      $(target).prev().html(qty);
+    }
+
+    if (target.matches(dom.cartLineItemEditMinus)) {
+      const current = new Number($(target).next().html());
+
+      if (current > 1) {
+        const qty = current - 1;
+
+        $(target).next().html(qty);
+      } else {
+        $(target).closest('[data-cart-line-item]').remove();
+      }
+    }
+  })
+}
+
 export const update = () => {
   $.get('/cart?view=contents', response => {
     $(dom.lineItemEntryPoint).html(response);
-  }).done(expand);
+  }).done(() => {
+    handleExpand();
+    handleQty();
+  });
 }
 
 const bindUIActions = () => {

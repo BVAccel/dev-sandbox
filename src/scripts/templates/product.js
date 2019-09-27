@@ -12,9 +12,9 @@ const tease = () => {
 
   showInlineCart();
 
-  setTimeout(() => {
-    hideInlineCart();
-  }, 2500);
+  // setTimeout(() => {
+  //   hideInlineCart();
+  // }, 2500);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

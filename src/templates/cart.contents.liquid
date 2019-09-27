@@ -1,4 +1,11 @@
 {% layout none %}
+<div class="inline-cart__count">
+  <span data-inline-cart-count>
+    {{ cart.item_count }}
+  </span>
+
+  &nbsp;items in your cart
+</div>
 {% for line_item in cart.items %}
 <div
   class="cart-line-item"
@@ -6,7 +13,10 @@
   data-cart-line-item-product-variant-id={{ line_item.variant_id }}
 >
   <div class="cart-line-item__image">
-    <img src="{{ line_item.product.featured_image | img_url: 'small' }}" alt="{{ line_item.product.description }}" />
+    <img
+      src="{{ line_item.product.featured_image | img_url: 'small' }}"
+      alt="{{ line_item.product.description }}"
+    />
   </div>
 
   <div class="cart-line-item__container">
@@ -22,7 +32,10 @@
         QTY: {{ line_item.quantity }}
       </div>
     
-      <div class="cart-line-item__price" data-cart-line-item-price>
+      <div
+        class="cart-line-item__price"
+        data-cart-line-item-price
+      >
         {{ line_item.price | money }}
       </div>
 
@@ -49,16 +62,18 @@
       <button
         class="cart-line-item__edit-btn"
         data-cart-line-item-edit-minus
+        data-cart-line-item-edit-qty="-1"
       >-</button>
       <div
         class="cart-line-item__edit-qty"
-        data-cart-line-item-edit-qty
+        data-cart-line-item-qty-val
       >
         {{ line_item.quantity }}
       </div>
       <button
         class="cart-line-item__edit-btn"
         data-cart-line-item-edit-plus
+        data-cart-line-item-edit-qty="1"
       >+</button>
     </div>
     <button
@@ -79,7 +94,7 @@
       class="cart-line-item__subtotal"
       data-inline-cart-subtotal
     >
-      Subtotal: {{ cart.total_price }}
+      Subtotal: {{ cart.total_price | money }}
     </div>
     <a
       href="/checkout"

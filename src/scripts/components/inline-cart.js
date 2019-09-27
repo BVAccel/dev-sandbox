@@ -25,7 +25,6 @@ const bindUIActions = () => {
     const $this = $(event.currentTarget);
     const id = $this.attr('data-variant-id')
 
-    console.log('remove id', id)
     productUpdate(id, 0);
     $this.closest(dom.cartLineItem).remove();
   });

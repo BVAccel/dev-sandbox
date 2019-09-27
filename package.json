@@ -43,6 +43,7 @@
     "apollo-link": "^1.2.6",
     "apollo-link-state": "^0.4.2",
     "babel-preset-minify": "^0.5.0",
+    "easydropdown": "^4.1.1",
     "flickity": "^2.1.2",
     "flickity-as-nav-for": "^2.0.1",
     "flickity-fullscreen": "^1.1.1",

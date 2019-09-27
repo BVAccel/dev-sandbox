@@ -1,0 +1,33 @@
+.pagination {
+  max-width: 320px;
+  margin: 15px auto;
+  display: flex;
+  flex-basis: 100%;
+  justify-content: center;
+  font-size: 16px;
+  color: $color-body-text;
+
+  a,
+  .page.current,
+  .next a,
+  .prev a {
+    color:$color-grey-darker;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    transition: background $transition;
+  }
+
+  a,
+  .next a,
+  .prev a {
+    &:hover {
+      background: $color-grey-light;
+    }
+  }
+
+  .page.current {
+    color: $color-body-text;
+    font-weight: 700;
+  }
+}

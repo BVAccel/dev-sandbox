@@ -1,3 +1,44 @@
-<nav class="collection-sort">
-  <h4>Collection Sort</h4>
+<nav class="collection-sort__container">
+  {% assign sort_options = 'manual,price-ascending,price-descending,created-descending,best-selling' | split: ',' %}
+  <select
+    class="collection-sort collection-sort--mobile"
+    data-collection-sort="{{ collection.sort_by | default: collection.default_sort_by | escape }}"
+    data-custom-select
+  >
+    <option value="manual">Sort</option>
+    <option value="price-ascending">$</option>
+    <option value="price-descending">$$$</option>
+    <option value="created-descending">Newest</option>
+    <option value="best-selling">Popular</option>
+  </select>
+
+  <div
+    class="collection-sort collection-sort--desktop"
+    data-collection-sort
+  >
+    <button
+      value="price-ascending"
+      class="collection-sort__btn"
+    >
+      $
+    </button>
+    <button
+      value="price-descending"
+      class="collection-sort__btn"
+    >
+      $$$
+    </button>
+    <button
+      value="created-descending"
+      class="collection-sort__btn"
+    >
+      Newest
+    </button>
+    <button
+      value="best-selling"
+      class="collection-sort__btn"
+    >
+      Popular
+    </button>
+  </div>
 </nav>

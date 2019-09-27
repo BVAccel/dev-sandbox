@@ -1,1 +1,46 @@
-<h3>Collection Cart</h3>
+<a
+  href="/products/{{ product.url }}"
+  class="collection-card__link"
+>
+  <div class="collection-card">
+    {% if product.featured_image %}
+      <div
+        class="collection-card__img"
+        style="background-image: url('{{ product.featured_image | img_url: '400x' }}');">
+      </div>
+    {% endif %}
+
+    <div class="collection-card__variants">
+      {% for image in product.images %}
+          <img
+            src="{{ image | img_url: '100x' }}"
+            alt="{{ image.alt }}"
+            class="collection-card__variants-img"
+          />
+      {% endfor %}
+    </div>
+
+    {% if product.variants.size > 1 %}
+      <div class="collection-card__colors">
+        {% assign color_counter = 0 %}
+        {% for variant in product.variants %}
+          {% if variant.option1 contains 'Color-' %}
+            {% assign color_counter = color_counter | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+      
+        {% if color_counter > 0 %}
+          {{ color_counter }} colors
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <h4 class="collection-card__title">
+      {{ product.title }}
+    </h4>
+
+    <div class="collection-card__price">
+      {{ product.price | money }}
+    </div>
+  </div>
+</a>

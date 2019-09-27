@@ -1,7 +1,31 @@
 .collection-filters {
-  background-color: #eee;
+  z-index: 1000;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  flex: 1;
+  width: 25%;
+  height: calc(100% - 60px);
+  padding: $space-sm;
+  background-color: #fff;
+  width: 320px;
+  transform: translate(-320px, 0);
+  transition: transform $transition;
+
+  &.is-expanded {
+    transform: translate(0, 0);
+    box-shadow: 0 0 10px $color-grey;
+  }
+
+  @include mq('large') {
+    display: flex;
+    position: relative;
+    transform: translate(0, 0);
+    height: auto;
+  }
 }
 
 .collection-filters__title {
-  font-size: 20px;
+  font-size: 26px;
+  line-height: 31px;
 }

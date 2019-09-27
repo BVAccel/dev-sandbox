@@ -1,8 +1,33 @@
 <div class="collection-cards">
-  <h2>Collection cards</h2>
+  {% if collection.products %}
+    <div class="collection-cards__title-container">
+      <h2 class="collection-cards__title">
+        {{ collection.title }}
+  
+        (<span class="collection-cards__title-count">{{ collection.all_products_count }}</span>)
+      </h2>
+  
+      <button class="collection-cards__filter-toggle" data-filter-toggle>
+        {% include 'icon-filters' %}
+      </button>
 
-  {% include 'collection-card' %}
-  {% include 'collection-card' %}
-  {% include 'collection-card' %}
-  {% include 'collection-card' %}
+      {% include 'collection-sort' %}
+    </div>
+
+    <p class="collection-cards__description">
+      {{ collection.description }}
+    </p>
+  {% endif %}
+
+  <div class="collection-cards__container">
+    {%- paginate collection.products by 4 -%}
+      {%- for product in collection.products -%}
+        {% include 'collection-card' %}
+      {%- endfor -%}
+
+      <div class="pagination">
+        {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
+      </div>
+    {%- endpaginate -%}
+  </div>
 </div>

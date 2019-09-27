@@ -1,7 +1,65 @@
 .collection-filter {
-  background-color: #ccc;
+  display: flex;
+  flex: 1;
+  max-height: 0;
+  opacity: 0.01;
+  overflow: hidden;
+  transition: max-height $transition, opacity $transition;
+
+  &.is-expanded {
+    max-height: 115px;
+    opacity: 1;
+  }
 }
 
 .collection-filter__title {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: $space-sm 0;
   font-size: 16px;
+  line-height: 22px;
+  border-bottom: 1px solid $color-grey;
+  cursor: pointer;
+}
+
+.collection-filter__title-icon {
+  pointer-events: none;
+}
+
+.collection-filter__swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 1px solid $color-grey-darker;
+  transition: filter $transition;
+
+  &:hover {
+    filter: saturate(5) brightness(0.95);
+  }
+}
+
+.collection-filter__list {
+  padding: $space-sm 0;
+}
+
+.collection-filter__item {}
+
+.collection-filter__item-link {
+  color: $color-body-text;
+  transition: color $transition;
+  font-size: 16px;
+  line-height: 22px;
+
+  &:hover {
+    color: $color-grey-darker;
+    text-decoration: underline;
+  }
+}
+
+.collection-filter__list--color {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  flex-wrap: wrap;
 }

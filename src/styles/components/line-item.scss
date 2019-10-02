@@ -161,3 +161,12 @@
 .line-item__footer {
   margin-top: auto;
 }
+
+.line-item__footer-text {
+  color: $color-grey-dark;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50vh;
+}

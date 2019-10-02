@@ -25,6 +25,18 @@ const config = {
   ]
 };
 
+/**
+ * @description Bind UI actions to the component
+ * @example
+ *
+ *     bindUIActions()
+ */
 const bindActions = () => initSlider(dom.instagram, config);
 
+/**
+ * @description Init functions is used to initialize component at template level imports.
+ * @example
+ *
+ *     init()
+ */
 export const init = () => bindActions();

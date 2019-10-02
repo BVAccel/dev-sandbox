@@ -87,6 +87,15 @@ export const handlize = (string) => {
     .replace(/[\s_]/g, '-');
 };
 
+/**
+ * @description Control the rate at which your function can be called
+ * @params {callback} func - callback
+ * @params {number} ms - amount of ms before the next function call
+ * @return {throttle~wrapper} wrapper
+ * @example
+ *
+ *     init()
+ */
 export function throttle(func, ms) {
   let isThrottled = false;
   let savedArgs;

@@ -4,26 +4,23 @@ import { throttle } from '../common/Helpers';
 const throttleDuration = 250;
 const transitionDuration = 250;
 const breakpoint = 993;
-let expandedEl = null;
-
-const $elements = $(dom.collectionFiltersContainer);
+const $filterContainers = $(dom.collectionFiltersContainer);
 
 /**
- * @description Add `is-expanded` class to elements
+ * @description Add `is-expanded` class to filterContainers
  * @param {action} string - `add` or `remove` action
  *
  * @example
  *
- *     setExpandedClass('add')
+ *     setClassAction('add')
  */
-const setExpandedClass = action => {
+const setClassAction = (action, $elements = $filterContainers) => {
   if (action === 'add') {
     $elements.addClass('is-expanded');
   } else if (action === 'remove') {
     $elements.removeClass('is-expanded');
   }
 }
-
 
 /**
  * @description Handle expand action
@@ -34,34 +31,28 @@ const setExpandedClass = action => {
  *     expand($('[data-selector]'))
  */
 const expand = $element => {
-  setExpandedClass('remove');
+  setClassAction('remove');
   setTimeout(() => {
     $element.addClass('is-expanded');
   }, transitionDuration);
-
-  expandedEl = $element;
 }
-
 
 /**
  * @description Handle shrink action
- * @param {element} $element - jQuery element
+ * @param {element} $element - jQuery element/elements
  *
  * @example
  *
  *     shrink()
  */
-const shrink = () => {
-  setExpandedClass('remove');
-  expandedEl = null;
-}
+const shrink = () => setClassAction('remove');
 
 /**
  * @description Check mobile viewport
  * @return {boolean}
  * @example
  *
- *     shrink()
+ *     isMobile()
  */
 const isMobile = () => window.innerWidth < breakpoint;
 
@@ -86,14 +77,14 @@ const windowResize = () => {
 export const bindUIActions = () => {
   $(window).on('resize', throttle(windowResize, throttleDuration));
 
-  $(dom.collectionFilters).on('click', event => {
-    const $target = $(event.target);
-    const attr = $target.attr(dom.collectionFiltersTitleAttr);
+  $(dom.collectionFilters).on('click', dom.collectionFiltersTitle, event => {
+    const $this = $(event.currentTarget);
+    const $container = $this.next();
 
-    if (typeof attr !== typeof undefined && attr !== false) {
-      const $targetElement = $target.next(dom.collectionFiltersContainer);
-
-      $targetElement.is(expandedEl) ? shrink() : expand($targetElement);
+    if ($container.hasClass('is-expanded')) {
+      shrink();
+    } else {
+      expand($container);
     }
   });
 

@@ -1,4 +1,4 @@
-.cart-line-item {
+.line-item {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -6,7 +6,7 @@
   margin-bottom: 10px;
 }
 
-.cart-line-item__image {
+.line-item__image {
   flex: 1;
   flex-basis: 33.333%;
 
@@ -21,13 +21,13 @@
   }
 }
 
-.cart-line-item__title {
+.line-item__title {
   margin-bottom: 15px;
   font-size: 14px;
   line-height: 16px;
 }
 
-.cart-line-item__container {
+.line-item__container {
   display: flex;
   flex-direction: column;
   flex: 2;
@@ -36,7 +36,7 @@
   padding: 10px;
 }
 
-.cart-line-item__container-extra {
+.line-item__container-extra {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -45,19 +45,19 @@
   border-top: 1px solid $color-grey-light;
 }
 
-.cart-line-item__price {
+.line-item__price {
   color: $color-grey-light;
   font-size: 16px;
   line-height: 19px;
 }
 
-.cart-line-item__quantity {
+.line-item__quantity {
   font-size: 11px;
   line-height: 19px;
   text-transform: uppercase;
 }
 
-.cart-line-item__expand {
+.line-item__expand {
   width: 40px;
   height: 40px;
   padding: 10px;
@@ -67,7 +67,7 @@
   }
 }
 
-.cart-line-item__remove {
+.line-item__remove {
   display: flex;
   justify-content: center;
   color: $color-grey-dark;
@@ -82,7 +82,7 @@
   }
 }
 
-.cart-line-item__edit-container {
+.line-item__edit-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -99,7 +99,7 @@
   }
 }
 
-.cart-line-item__edit {
+.line-item__edit {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -107,7 +107,7 @@
   width: 110px;
 }
 
-.cart-line-item__edit-title {
+.line-item__edit-title {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -115,21 +115,21 @@
   line-height: 19px;
 }
 
-.cart-line-item__edit-btn {
+.line-item__edit-btn {
   font-size: 26px;
   line-height: 31px;
   font-weight: 100;
   padding: 5px 13px;
 }
 
-.cart-line-item__edit-qty {
+.line-item__edit-qty {
   font-size: 26px;
   line-height: 31px;
   display: flex;
   align-items: center;
 }
 
-.cart-line-item__subtotal {
+.line-item__subtotal {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -140,7 +140,7 @@
   margin-bottom: 15px;
 }
 
-.cart-line-item__checkout {
+.line-item__checkout {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,6 +158,6 @@
   }
 }
 
-.cart-line-item__footer {
+.line-item__footer {
   margin-top: auto;
 }

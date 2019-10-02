@@ -40,11 +40,11 @@ const bindUIActions = () => {
   $(document).on('click', dom.cartLineItemEditQty, event => {
     const $this = $(event.currentTarget);
     const $item = $this.closest(dom.cartLineItem)
-    const qtyUpdate = parseInt($this.attr('data-cart-line-item-edit-qty'));
+    const qtyUpdate = parseInt($this.attr('data-line-item-edit-qty'));
     const currentQty = parseInt($item.find(dom.cartLineItemQtyVal).text());
     const qty = currentQty + qtyUpdate;
     const id = $this.closest(dom.cartLineItemProductVariant)
-                    .attr('data-cart-line-item-product-variant-id');
+                    .attr('data-line-item-product-variant-id');
 
     productUpdate(id, qty);
   });

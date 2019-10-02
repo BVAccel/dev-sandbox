@@ -15,7 +15,7 @@
   <div class="line-item__image">
     <img
       src="{{ line_item.product.featured_image | img_url: 'small' }}"
-      alt="{{ line_item.product.description }}"
+      alt="{{ line_item.product.description | strip_html }}"
     />
   </div>
 

@@ -14,9 +14,14 @@ const productUpdate = (variantId, quantity) => {
   .done(() => update());
 }
 
-export const update = () => {
+export const update = showCart => {
   $.get('/cart?view=contents', response => {
     $(dom.lineItemEntryPoint).html(response);
+  })
+  .done(() => {
+    if (showCart) {
+      show();
+    }
   });
 }
 
@@ -54,6 +59,6 @@ const bindUIActions = () => {
 }
 
 export const init = () => {
-  update();
+  update(false);
   bindUIActions();
 }

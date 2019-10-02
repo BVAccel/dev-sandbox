@@ -1,21 +1,6 @@
 import dom from '../common/Dom';
 import 'styles/templates/product/index.scss';
-import {
-  update as updateInlineCart,
-  show as showInlineCart,
-  hide as hideInlineCart,
-} from '../components/inline-cart'
-
-const tease = () => {
-  const inlineCartCount = $(dom.inlineCartCount).html();
-  $(dom.inlineCartCount).html(parseInt(inlineCartCount) + 1);
-
-  showInlineCart();
-
-  // setTimeout(() => {
-  //   hideInlineCart();
-  // }, 2500);
-}
+import { update as updateInlineCart } from '../components/inline-cart';
 
 document.addEventListener('DOMContentLoaded', () => {
   $('#add-to-cart').on('click', () => {
@@ -23,9 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         quantity: 1,
         id: '8456013938739'
       })
-      .done(res => updateInlineCart());
-
-      tease();
+      .done(() => updateInlineCart(true));
   });
 
   $('#add-to-cart-2').on('click', () => {
@@ -33,9 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       quantity: 1,
       id: '17461984722995'
     })
-    .done(res => updateInlineCart());
-
-    tease();
+    .done(res => updateInlineCart(true));
   });
 });
 

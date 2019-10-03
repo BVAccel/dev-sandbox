@@ -1,5 +1,3 @@
-.collection-card {}
-
 .collection-card__link {
   display: flex;
   flex-direction: column;
@@ -33,7 +31,6 @@
   color: $color-grey-darker;
 }
 
-.collection-card__title {}
 .collection-card__price {
   color: $color-grey-darker;
 }
@@ -54,13 +51,4 @@
   width: 50px;
   border: 1px solid $color-grey;
   padding: 5px;
-}
-
-.collection-card__variants-img-link {
-  // display: flex;
-  // margin: 0 5px;
-  // max-height: 50px;
-  // width: 50px;
-  // border: 1px solid $color-grey;
-  // padding: 5px;
 }

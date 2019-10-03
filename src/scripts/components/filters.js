@@ -88,9 +88,7 @@ export const bindUIActions = () => {
     }
   });
 
-  $(dom.collectionFilterToggle).on('click', event => {
-    $(dom.collectionFilters).toggleClass('is-expanded');
-  });
+  $(dom.collectionFilterToggle).on('click', event => $(dom.collectionFilters).toggleClass('is-expanded'));
 };
 
 /**

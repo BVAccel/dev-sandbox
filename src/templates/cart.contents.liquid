@@ -1,0 +1,114 @@
+{% layout none %}
+<div class="inline-cart__count">
+  <span data-inline-cart-count>
+    {{ cart.item_count }}
+  </span>
+
+  &nbsp;items in your cart
+</div>
+{% for line_item in cart.items %}
+<div
+  class="line-item"
+  data-line-item
+  data-line-item-product-variant-id={{ line_item.variant_id }}
+>
+  <div class="line-item__image">
+    <img
+      src="{{ line_item.product.featured_image | img_url: 'small' }}"
+      alt="{{ line_item.product.description | strip_html }}"
+    />
+  </div>
+
+  <div class="line-item__container">
+    <div class="line-item__title">
+      {{ line_item.title }}
+    </div>
+
+    <div class="line-item__container-extra">
+      <div
+        class="line-item__quantity"
+        data-line-item-qty
+      >
+        QTY: {{ line_item.quantity }}
+      </div>
+    
+      <div
+        class="line-item__price"
+        data-line-item-price
+      >
+        {{ line_item.price | money }}
+      </div>
+
+      <button
+        class="line-item__expand"
+        data-line-item-expand
+      >
+        {% include 'icon-arrow-down' %}
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="line-item__edit-container"
+    data-line-item-edit-container
+  >
+    <div class="line-item__edit-title">
+      Edit Quantity
+    </div>
+    <div
+      class="line-item__edit"
+      data-line-item-edit
+    >
+      <button
+        class="line-item__edit-btn"
+        data-line-item-edit-minus
+        data-line-item-edit-qty="-1"
+      >-</button>
+      <div
+        class="line-item__edit-qty"
+        data-line-item-qty-val
+      >
+        {{ line_item.quantity }}
+      </div>
+      <button
+        class="line-item__edit-btn"
+        data-line-item-edit-plus
+        data-line-item-edit-qty="1"
+      >+</button>
+    </div>
+    <button
+      class="line-item__remove"
+      data-variant-id="{{ line_item.variant_id }}"
+      data-line-item-remove
+    >
+      Remove item
+    </button>
+  </div>
+</div>
+{% endfor %}
+
+{% if cart.item_count > 0 %}
+  <div class="line-item__footer">
+    <hr>
+    <div
+      class="line-item__subtotal"
+      data-inline-cart-subtotal
+    >
+      Subtotal: {{ cart.total_price | money }}
+    </div>
+    <a
+      href="/checkout"
+      name="checkout"
+      class="line-item__checkout"
+      data-inline-cart-checkout
+    >
+      CHECK OUT
+    </a>
+  </div>
+{% else %}
+  <div class="line-item__footer">
+    <div class="line-item__footer-text">
+      Your cart is currently empty.
+    </div>
+  </div>
+{% endif %}

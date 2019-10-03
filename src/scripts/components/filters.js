@@ -4,11 +4,17 @@ import { throttle } from '../common/Helpers';
 const throttleDuration = 250;
 const transitionDuration = 250;
 const breakpoint = 993;
-let expandedEl = null;
+const $filterContainers = $(dom.collectionFiltersContainer);
 
-const $elements = $(dom.collectionFiltersContainer);
-
-const setExpandedClass = action => {
+/**
+ * @description Add `is-expanded` class to filterContainers
+ * @param {action} string - `add` or `remove` action
+ *
+ * @example
+ *
+ *     setClassAction('add')
+ */
+const setClassAction = (action, $elements = $filterContainers) => {
   if (action === 'add') {
     $elements.addClass('is-expanded');
   } else if (action === 'remove') {
@@ -16,47 +22,79 @@ const setExpandedClass = action => {
   }
 }
 
+/**
+ * @description Handle expand action
+ * @param {object} $element - jQuery element
+ *
+ * @example
+ *
+ *     expand($('[data-selector]'))
+ */
 const expand = $element => {
-  setExpandedClass('remove');
+  setClassAction('remove');
   setTimeout(() => {
     $element.addClass('is-expanded');
   }, transitionDuration);
-
-  expandedEl = $element;
 }
 
-const shrink = () => {
-  setExpandedClass('remove');
-  expandedEl = null;
-}
+/**
+ * @description Handle shrink action
+ * @param {element} $element - jQuery element/elements
+ *
+ * @example
+ *
+ *     shrink()
+ */
+const shrink = () => setClassAction('remove');
 
+/**
+ * @description Check mobile viewport
+ * @return {boolean}
+ * @example
+ *
+ *     isMobile()
+ */
 const isMobile = () => window.innerWidth < breakpoint;
 
+/**
+ * @description Handle window resize
+ * @example
+ *
+ *     windowResize()
+ */
 const windowResize = () => {
-  console.log('windowResize');
   if (!isMobile()) {
-    console.log('isMobile - ', isMobile())
     $(dom.collectionFilters).removeClass('is-expanded');
   }
 }
 
+/**
+ * @description Bind UI actions to the component
+ * @example
+ *
+ *     bindUIActions()
+ */
 export const bindUIActions = () => {
   $(window).on('resize', throttle(windowResize, throttleDuration));
 
-  $(dom.collectionFilters).on('click', event => {
-    const $target = $(event.target);
-    const attr = $target.attr(dom.collectionFiltersTitleAttr);
+  $(dom.collectionFilters).on('click', dom.collectionFiltersTitle, event => {
+    const $this = $(event.currentTarget);
+    const $container = $this.next();
 
-    if (typeof attr !== typeof undefined && attr !== false) {
-      const $targetElement = $target.next(dom.collectionFiltersContainer);
-
-      $targetElement.is(expandedEl) ? shrink() : expand($targetElement);
+    if ($container.hasClass('is-expanded')) {
+      shrink();
+    } else {
+      expand($container);
     }
   });
 
-  $(dom.collectionFilterToggle).on('click', event => {
-    $(dom.collectionFilters).toggleClass('is-expanded');
-  });
+  $(dom.collectionFilterToggle).on('click', event => $(dom.collectionFilters).toggleClass('is-expanded'));
 };
 
+/**
+ * @description Init functions is used to initialize component at template level imports.
+ * @example
+ *
+ *     init()
+ */
 export const init = () => bindUIActions();
